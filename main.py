@@ -656,8 +656,13 @@ def main():
         logger.error("No questions loaded! Bot cannot start.")
         return
     
-    # Create application
-    application = Application.builder().token(TOKEN).build()
+    # Create application with proper configuration for Python 3.13+
+    application = (
+        Application.builder()
+        .token(TOKEN)
+        .concurrent_updates(True)
+        .build()
+    )
     
     # Add handlers
     application.add_handler(CommandHandler("start", start_command))
@@ -675,7 +680,7 @@ def main():
     
     # Start bot
     logger.info("Bot starting...")
-    application.run_polling(allowed_updates=Update.ALL_TYPES)
+    application.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
 
 
 if __name__ == '__main__':

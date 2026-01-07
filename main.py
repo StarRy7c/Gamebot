@@ -7,12 +7,11 @@ from difflib import SequenceMatcher
 from typing import Dict, List, Optional, Set
 import pytz
 
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Update
 from telegram.ext import (
     Application,
     CommandHandler,
     MessageHandler,
-    CallbackQueryHandler,
     ContextTypes,
     filters,
 )

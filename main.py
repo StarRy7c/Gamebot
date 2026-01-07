@@ -7,11 +7,12 @@ from difflib import SequenceMatcher
 from typing import Dict, List, Optional, Set
 import pytz
 
-from telegram import Update
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     Application,
     CommandHandler,
     MessageHandler,
+    CallbackQueryHandler,
     ContextTypes,
     filters,
 )
@@ -30,7 +31,7 @@ IST = pytz.timezone('Asia/Kolkata')
 HINT_DURATION = 20  # seconds per hint
 MAX_HINTS = 5
 FAST_FINGER_BONUS_SECONDS = 5
-NEAR_MISS_THRESHOLD = 0.75  # String similarity threshold
+NEAR_MISS_THRESHOLD = 0.75
 STEAL_WINDOW_SECONDS = 2
 
 # Scoring
@@ -47,7 +48,15 @@ STREAK_MULTIPLIERS = {
     3: 1.2
 }
 
-# Game State Storage
+# Milestone achievements
+MILESTONES = {
+    50: "🌟 *MILESTONE UNLOCKED!* 🌟\n{name} has reached *50 points*! What a brain! 🧠✨",
+    100: "🏆 *LEGENDARY ACHIEVEMENT!* 🏆\n{name} has crushed *100 points*! Absolute genius! 🎯🔥",
+    150: "👑 *MASTERMIND STATUS!* 👑\n{name} has conquered *150 points*! Unstoppable! 💪⚡",
+    200: "🌌 *GALAXY BRAIN!* 🌌\n{name} has dominated with *200 points*! Beyond legendary! 🚀🌟"
+}
+
+
 class GameState:
     def __init__(self):
         self.active_games: Dict[int, 'ActiveGame'] = {}
@@ -82,12 +91,13 @@ class GameState:
 class DailyData:
     def __init__(self):
         self.used_words: Set[str] = set()
-        self.leaderboard: Dict[int, float] = {}  # user_id -> points
-        self.streaks: Dict[int, int] = {}  # user_id -> streak count
-        self.steal_used: Dict[int, bool] = {}  # user_id -> used steal
-        self.fastest_guesses: Dict[int, float] = {}  # user_id -> fastest time
-        self.total_correct: Dict[int, int] = {}  # user_id -> correct count
-        self.user_names: Dict[int, str] = {}  # user_id -> name
+        self.leaderboard: Dict[int, float] = {}
+        self.streaks: Dict[int, int] = {}
+        self.steal_used: Dict[int, bool] = {}
+        self.fastest_guesses: Dict[int, float] = {}
+        self.total_correct: Dict[int, int] = {}
+        self.user_names: Dict[int, str] = {}
+        self.milestones_reached: Dict[int, Set[int]] = {}
         
     def reset(self):
         """Reset daily data at midnight"""
@@ -97,24 +107,27 @@ class DailyData:
         self.steal_used.clear()
         self.fastest_guesses.clear()
         self.total_correct.clear()
+        self.milestones_reached.clear()
 
 
 class ActiveGame:
-    def __init__(self, group_id: int, question: Dict):
+    def __init__(self, group_id: int, total_questions: int):
         self.group_id = group_id
-        self.question = question
+        self.total_questions = total_questions
+        self.current_question_num = 0
+        self.current_question: Optional[Dict] = None
         self.current_hint = 0
         self.hint_start_time: Optional[datetime] = None
         self.answered = False
-        self.first_messages: Dict[int, str] = {}  # user_id -> message per hint
+        self.first_messages: Dict[int, str] = {}
         self.hint_message_id: Optional[int] = None
         self.category_revealed = False
-        self.wrong_guessers: List[tuple] = []  # [(user_id, timestamp)]
-        self.near_miss_shown: Set[int] = set()  # user_ids who got near miss feedback
+        self.wrong_guessers: List[tuple] = []
+        self.near_miss_shown: Set[int] = set()
         self.timer_task: Optional[asyncio.Task] = None
+        self.game_leaderboard: Dict[int, float] = {}  # Points in this game session
 
 
-# Global game state
 game_state = GameState()
 
 
@@ -132,11 +145,9 @@ def calculate_points(hint_number: int, time_taken: float, streak: int) -> float:
     """Calculate points for a correct guess"""
     base = BASE_POINTS.get(hint_number, 0)
     
-    # Fast finger bonus
     if time_taken <= FAST_FINGER_BONUS_SECONDS:
         base += 1
     
-    # Streak multiplier
     multiplier = 1.0
     if streak >= 3:
         multiplier = 1.2
@@ -146,25 +157,68 @@ def calculate_points(hint_number: int, time_taken: float, streak: int) -> float:
     return base * multiplier
 
 
+def get_add_to_group_button():
+    """Create an inline button to add bot to group"""
+    keyboard = [[
+        InlineKeyboardButton(
+            "➕ Add to Your Group",
+            url="https://t.me/your_bot_username?startgroup=true"
+        )
+    ]]
+    return InlineKeyboardMarkup(keyboard)
+
+
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle /start command"""
+    """Handle /start command with impressive welcome"""
+    
+    welcome_text = (
+        "🧠 *WELCOME TO INFERENCE MASTER* 🧠\n\n"
+        "Think you're smart? Prove it! 🎯\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n"
+        "🎮 *HOW IT WORKS*\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "💡 Get 5 progressive hints\n"
+        "⏱️ 20 seconds per hint\n"
+        "🏃 Guess faster = MORE points\n"
+        "🔥 Build streaks for multipliers\n"
+        "😈 Steal points from wrong guessers\n"
+        "🏆 Dominate the daily leaderboard\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n"
+        "⚡ *WHY YOUR GROUP NEEDS THIS* ⚡\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "✨ Test your friends' IQ\n"
+        "🎯 Daily fresh challenges\n"
+        "🤝 Compete & have fun together\n"
+        "🧹 Clean chat - no spam!\n"
+        "🆓 100% FREE forever\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n"
+        "💎 *SCORING SYSTEM*\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "🥇 Hint 1: *10 pts* (genius level)\n"
+        "🥈 Hint 2: *8 pts* (brilliant)\n"
+        "🥉 Hint 3: *6 pts* (smart)\n"
+        "📌 Hint 4: *4 pts* (decent)\n"
+        "📍 Hint 5: *2 pts* (better late than never)\n\n"
+        "⚡ *Fast Bonus:* +1 pt for <5 sec\n"
+        "🔥 *Streaks:* 2x = 1.1×, 3x = 1.2×\n"
+        "😈 *Steal Mode:* Snatch points within 2 sec\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n"
+        "🎯 *READY TO DOMINATE?*\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "Add me to your group and type:\n"
+        "**/play** to start the brain battle! 🧠⚔️\n\n"
+        "Your friends won't know what hit them! 🚀"
+    )
+    
+    keyboard = [[
+        InlineKeyboardButton("➕ Add to Group & Start Playing!", url="https://t.me/your_bot_username?startgroup=true")
+    ]]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    
     await update.message.reply_text(
-        "🧠 *INFERENCE GUESSING GAME*\n\n"
-        "Welcome to the thinking game! Guess the word from progressive hints.\n\n"
-        "📋 *Commands:*\n"
-        "/play - Start a new question\n"
-        "/leaderboard - View daily rankings\n"
-        "/stats - Your personal stats\n"
-        "/rules - Game rules\n"
-        "/stop - Stop current game\n\n"
-        "🎯 *Quick Rules:*\n"
-        "• 5 hints, 20 seconds each\n"
-        "• Earlier guesses = more points\n"
-        "• Fast answers get bonus points\n"
-        "• Build streaks for multipliers\n"
-        "• One steal chance per game!\n\n"
-        "Ready to test your inference skills? Type /play!",
-        parse_mode='Markdown'
+        welcome_text,
+        parse_mode='Markdown',
+        reply_markup=reply_markup
     )
 
 
@@ -187,52 +241,130 @@ async def rules_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• 2-guess streak: 1.1× multiplier\n"
         "• 3+ streak: 1.2× multiplier\n\n"
         "😈 *Steal Mode:*\n"
-        "• One steal per game\n"
+        "• One steal per game session\n"
         "• If someone guesses wrong, answer correctly within 2 seconds\n"
         "• Steal their points, they get -1\n\n"
+        "🎮 *Game Modes:*\n"
+        "• Choose 3, 5, or 10 questions per game\n"
+        "• Game leaderboard after each question\n"
+        "• Final winner announced at end\n\n"
+        "🏆 *Leaderboard:*\n"
+        "• Game leaderboard: During game\n"
+        "• Daily leaderboard: /leaderboard command\n"
+        "• Reach 50, 100+ points for special recognition!\n\n"
         "🎭 *Features:*\n"
         "• Near-miss hints when close\n"
-        "• Daily leaderboard reset\n"
+        "• Daily reset at midnight\n"
         "• No word repeats per day\n"
-        "• Clean chat (wrong guesses ignored)\n\n"
-        "🏆 *Winning:*\n"
-        "Most points at end of day wins!"
+        "• Clean chat (wrong guesses ignored)\n"
     )
     await update.message.reply_text(rules_text, parse_mode='Markdown')
 
 
 async def play_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle /play command to start a new question"""
+    """Handle /play command with question count selection"""
     chat_id = update.effective_chat.id
     
-    # Only allow in groups
     if update.effective_chat.type == 'private':
         await update.message.reply_text("This game can only be played in groups!")
         return
     
-    # Check if game already active
     if chat_id in game_state.active_games:
-        await update.message.reply_text("A game is already in progress! Wait for it to finish.")
+        await update.message.reply_text("A game is already in progress! Wait for it to finish or use /stop")
         return
     
-    # Get unused question
+    keyboard = [
+        [
+            InlineKeyboardButton("🎯 3 Questions (Quick)", callback_data="game_3"),
+            InlineKeyboardButton("🎮 5 Questions (Classic)", callback_data="game_5"),
+        ],
+        [
+            InlineKeyboardButton("🔥 10 Questions (Marathon)", callback_data="game_10"),
+        ]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    
+    await update.message.reply_text(
+        "🎮 *CHOOSE YOUR CHALLENGE*\n\n"
+        "Select how many questions you want to play:\n\n"
+        "🎯 *Quick (3):* Fast-paced fun\n"
+        "🎮 *Classic (5):* Perfect balance\n"
+        "🔥 *Marathon (10):* Ultimate brain test\n\n"
+        "Ready to prove your genius? 🧠",
+        parse_mode='Markdown',
+        reply_markup=reply_markup
+    )
+
+
+async def game_selection_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle game mode selection"""
+    query = update.callback_query
+    await query.answer()
+    
+    chat_id = query.message.chat_id
+    data = query.data
+    
+    if not data.startswith("game_"):
+        return
+    
+    num_questions = int(data.split("_")[1])
+    
     question = game_state.get_random_unused_question(chat_id)
     if not question:
-        await update.message.reply_text(
+        await query.edit_message_text(
             "All questions have been used today! Come back tomorrow for fresh questions. 🌅"
         )
         return
     
-    # Create new game
-    game = ActiveGame(chat_id, question)
+    game = ActiveGame(chat_id, num_questions)
+    game.current_question = question
     game_state.active_games[chat_id] = game
     
-    # Mark word as used
     if chat_id not in game_state.daily_data:
         game_state.daily_data[chat_id] = DailyData()
     game_state.daily_data[chat_id].used_words.add(question['word'].lower())
     
-    # Start first hint
+    await query.edit_message_text(
+        f"🎮 *GAME STARTING!*\n\n"
+        f"📊 *Mode:* {num_questions} Questions\n"
+        f"🎯 *Get ready to think!*\n\n"
+        f"First question coming up... 🧠",
+        parse_mode='Markdown'
+    )
+    
+    await asyncio.sleep(2)
+    await start_question(context, chat_id)
+
+
+async def start_question(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
+    """Start a new question in the game"""
+    game = game_state.active_games.get(chat_id)
+    if not game:
+        return
+    
+    game.current_question_num += 1
+    game.current_hint = 0
+    game.answered = False
+    game.category_revealed = False
+    game.first_messages.clear()
+    game.wrong_guessers.clear()
+    game.near_miss_shown.clear()
+    
+    if game.current_question_num > 1:
+        question = game_state.get_random_unused_question(chat_id)
+        if not question:
+            await end_game(context, chat_id)
+            return
+        game.current_question = question
+        game_state.daily_data[chat_id].used_words.add(question['word'].lower())
+    
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=f"❓ *Question {game.current_question_num}/{game.total_questions}*\n\nGet ready... 🎯",
+        parse_mode='Markdown'
+    )
+    
+    await asyncio.sleep(1)
     await start_hint(context, chat_id)
 
 
@@ -247,21 +379,19 @@ async def start_hint(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
     game.first_messages.clear()
     game.wrong_guessers.clear()
     
-    # Check if all hints exhausted
     if game.current_hint > MAX_HINTS:
-        await end_game_no_answer(context, chat_id)
+        await handle_no_answer(context, chat_id)
         return
     
-    # Reveal category after hint 3
     category_text = ""
     if game.current_hint == 3 and not game.category_revealed:
         game.category_revealed = True
-        category_text = f"\n\n🧠 *Category unlocked:* {game.question.get('category', 'Unknown')}"
+        category_text = f"\n\n🧠 *Category:* {game.current_question.get('category', 'Unknown')}"
     
-    # Send hint message
     hint_text = (
-        f"💡 *Hint {game.current_hint}/{MAX_HINTS}*\n\n"
-        f"_{game.question['hints'][game.current_hint - 1]}_\n\n"
+        f"💡 *Hint {game.current_hint}/{MAX_HINTS}*\n"
+        f"❓ *Question {game.current_question_num}/{game.total_questions}*\n\n"
+        f"_{game.current_question['hints'][game.current_hint - 1]}_\n\n"
         f"⏰ Time remaining: *{HINT_DURATION}s*"
         f"{category_text}"
     )
@@ -273,7 +403,6 @@ async def start_hint(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
     )
     game.hint_message_id = message.message_id
     
-    # Start timer countdown
     if game.timer_task:
         game.timer_task.cancel()
     game.timer_task = asyncio.create_task(
@@ -287,7 +416,6 @@ async def update_hint_timer(context: ContextTypes.DEFAULT_TYPE, chat_id: int, du
     if not game or game.answered:
         return
     
-    # Update at 10s and 5s remaining
     checkpoints = [10, 5]
     
     for checkpoint in checkpoints:
@@ -298,11 +426,12 @@ async def update_hint_timer(context: ContextTypes.DEFAULT_TYPE, chat_id: int, du
         
         category_text = ""
         if game.category_revealed:
-            category_text = f"\n\n🧠 *Category:* {game.question.get('category', 'Unknown')}"
+            category_text = f"\n\n🧠 *Category:* {game.current_question.get('category', 'Unknown')}"
         
         hint_text = (
-            f"💡 *Hint {game.current_hint}/{MAX_HINTS}*\n\n"
-            f"_{game.question['hints'][game.current_hint - 1]}_\n\n"
+            f"💡 *Hint {game.current_hint}/{MAX_HINTS}*\n"
+            f"❓ *Question {game.current_question_num}/{game.total_questions}*\n\n"
+            f"_{game.current_question['hints'][game.current_hint - 1]}_\n\n"
             f"⏰ Time remaining: *{checkpoint}s*"
             f"{category_text}"
         )
@@ -317,10 +446,8 @@ async def update_hint_timer(context: ContextTypes.DEFAULT_TYPE, chat_id: int, du
         except Exception as e:
             logger.error(f"Error updating timer: {e}")
     
-    # Wait for remaining time
     await asyncio.sleep(5)
     
-    # Move to next hint
     if not game.answered and chat_id in game_state.active_games:
         await start_hint(context, chat_id)
 
@@ -331,31 +458,25 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     message_text = update.message.text
     
-    # Check if game is active
     if chat_id not in game_state.active_games:
         return
     
     game = game_state.active_games[chat_id]
     
-    # Check if already answered
     if game.answered:
         return
     
-    # Check if user already sent message for this hint
     if user_id in game.first_messages:
-        return  # Silently ignore subsequent messages
+        return
     
-    # Store first message
     game.first_messages[user_id] = message_text
     
-    # Check if correct answer
-    correct_answer = game.question['word'].lower()
-    user_guess = message_text.strip().lower()
-    
-    # Store user name
     if chat_id not in game_state.daily_data:
         game_state.daily_data[chat_id] = DailyData()
     game_state.daily_data[chat_id].user_names[user_id] = update.effective_user.first_name
+    
+    correct_answer = game.current_question['word'].lower()
+    user_guess = message_text.strip().lower()
     
     if user_guess == correct_answer:
         await handle_correct_guess(update, context, chat_id, user_id)
@@ -369,15 +490,12 @@ async def handle_correct_guess(update: Update, context: ContextTypes.DEFAULT_TYP
     game = game_state.active_games[chat_id]
     daily_data = game_state.daily_data[chat_id]
     
-    # Calculate time taken
     time_taken = (datetime.now(IST) - game.hint_start_time).total_seconds()
     
-    # Check for steal opportunity
     steal_happened = False
     stolen_from = None
     
     if game.wrong_guessers and not daily_data.steal_used.get(user_id, False):
-        # Check if any wrong guess was within steal window
         for wrong_user_id, wrong_time in game.wrong_guessers:
             time_diff = (datetime.now(IST) - wrong_time).total_seconds()
             if time_diff <= STEAL_WINDOW_SECONDS:
@@ -386,48 +504,36 @@ async def handle_correct_guess(update: Update, context: ContextTypes.DEFAULT_TYP
                 daily_data.steal_used[user_id] = True
                 break
     
-    # Update streak
     current_streak = daily_data.streaks.get(user_id, 0) + 1
     daily_data.streaks[user_id] = current_streak
     
-    # Calculate points
     points = calculate_points(game.current_hint, time_taken, current_streak)
     
-    # Add to leaderboard
     daily_data.leaderboard[user_id] = daily_data.leaderboard.get(user_id, 0) + points
+    game.game_leaderboard[user_id] = game.game_leaderboard.get(user_id, 0) + points
     
-    # Track fastest guess
     if user_id not in daily_data.fastest_guesses or time_taken < daily_data.fastest_guesses[user_id]:
         daily_data.fastest_guesses[user_id] = time_taken
     
-    # Track total correct
     daily_data.total_correct[user_id] = daily_data.total_correct.get(user_id, 0) + 1
     
-    # Handle steal penalties
     steal_text = ""
     if steal_happened and stolen_from:
         daily_data.leaderboard[stolen_from] = daily_data.leaderboard.get(stolen_from, 0) - 1
-        daily_data.streaks[stolen_from] = 0  # Reset victim's streak
+        game.game_leaderboard[stolen_from] = game.game_leaderboard.get(stolen_from, 0) - 1
+        daily_data.streaks[stolen_from] = 0
         stolen_name = daily_data.user_names.get(stolen_from, "Unknown")
-        steal_text = f"\n\n😈 *STEAL!* Took points from @{stolen_name} (-1 pt)"
+        steal_text = f"\n\n😈 *STEAL!* Snatched points from {stolen_name}!"
     
-    # Penalty for victim if steal
-    if steal_happened:
-        # Already handled above
-        pass
-    
-    # Build result message
     user_name = update.effective_user.first_name
     
     result_text = (
-        f"✅ *CORRECT!*\n\n"
-        f"🎯 Answer: *{game.question['word']}*\n"
-        f"👤 Winner: @{user_name}\n"
-        f"💰 Points earned: *{points:.1f}*\n"
+        f"✅ *CORRECT!* Well done {user_name}! 🎉\n\n"
+        f"🎯 Answer: *{game.current_question['word']}*\n"
+        f"💰 Points earned: *+{points:.1f}*\n"
         f"⏱️ Time: *{time_taken:.1f}s*\n"
         f"🔥 Streak: *{current_streak}*"
-        f"{steal_text}\n\n"
-        f"Total points: *{daily_data.leaderboard[user_id]:.1f}*"
+        f"{steal_text}"
     )
     
     await context.bot.send_message(
@@ -436,17 +542,36 @@ async def handle_correct_guess(update: Update, context: ContextTypes.DEFAULT_TYP
         parse_mode='Markdown'
     )
     
-    # Mark game as answered
     game.answered = True
     
-    # Cancel timer
     if game.timer_task:
         game.timer_task.cancel()
     
-    # Remove game after short delay
-    await asyncio.sleep(3)
-    if chat_id in game_state.active_games:
-        del game_state.active_games[chat_id]
+    await asyncio.sleep(2)
+    
+    await show_game_leaderboard(context, chat_id)
+    
+    await asyncio.sleep(2)
+    
+    # Check for milestones
+    total_points = daily_data.leaderboard[user_id]
+    if user_id not in daily_data.milestones_reached:
+        daily_data.milestones_reached[user_id] = set()
+    
+    for milestone, message in MILESTONES.items():
+        if total_points >= milestone and milestone not in daily_data.milestones_reached[user_id]:
+            daily_data.milestones_reached[user_id].add(milestone)
+            await context.bot.send_message(
+                chat_id=chat_id,
+                text=message.format(name=user_name),
+                parse_mode='Markdown'
+            )
+            await asyncio.sleep(1)
+    
+    if game.current_question_num < game.total_questions:
+        await start_question(context, chat_id)
+    else:
+        await end_game(context, chat_id)
 
 
 async def handle_wrong_guess(update: Update, context: ContextTypes.DEFAULT_TYPE,
@@ -455,42 +580,142 @@ async def handle_wrong_guess(update: Update, context: ContextTypes.DEFAULT_TYPE,
     game = game_state.active_games[chat_id]
     daily_data = game_state.daily_data[chat_id]
     
-    # Reset streak
     if user_id in daily_data.streaks:
         daily_data.streaks[user_id] = 0
     
-    # Add to wrong guessers for steal tracking
     game.wrong_guessers.append((user_id, datetime.now(IST)))
     
-    # Check for near miss
     if is_near_miss(guess, answer) and user_id not in game.near_miss_shown:
         game.near_miss_shown.add(user_id)
         await update.message.reply_text("👀 Very close... think again.")
 
 
-async def end_game_no_answer(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
-    """End game when no one answers correctly"""
-    game = game_state.active_games.get(chat_id)
+async def handle_no_answer(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
+    """Handle when no one answers correctly"""
+    game = game_state.active_games[chat_id]
     if not game:
         return
     
     await context.bot.send_message(
         chat_id=chat_id,
-        text=f"⏰ *Time's up!*\n\nThe answer was: *{game.question['word']}*\n\nBetter luck next time!",
+        text=f"⏰ *Time's up!*\n\nThe answer was: *{game.current_question['word']}*\n\nMoving to next question...",
         parse_mode='Markdown'
     )
     
-    # Cancel timer
+    game.answered = True
+    
     if game.timer_task:
         game.timer_task.cancel()
     
-    # Remove game
-    if chat_id in game_state.active_games:
+    await asyncio.sleep(2)
+    
+    if game.current_question_num < game.total_questions:
+        await start_question(context, chat_id)
+    else:
+        await end_game(context, chat_id)
+
+
+async def show_game_leaderboard(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
+    """Show current game leaderboard"""
+    game = game_state.active_games.get(chat_id)
+    if not game or not game.game_leaderboard:
+        return
+    
+    daily_data = game_state.daily_data[chat_id]
+    
+    sorted_players = sorted(
+        game.game_leaderboard.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )[:5]
+    
+    leaderboard_text = (
+        f"📊 *GAME LEADERBOARD*\n"
+        f"After Question {game.current_question_num}/{game.total_questions}\n\n"
+    )
+    
+    medals = ["🥇", "🥈", "🥉", "4️⃣", "5️⃣"]
+    for idx, (user_id, points) in enumerate(sorted_players):
+        medal = medals[idx] if idx < len(medals) else f"{idx + 1}."
+        name = daily_data.user_names.get(user_id, "Unknown")
+        streak = daily_data.streaks.get(user_id, 0)
+        streak_emoji = f" 🔥×{streak}" if streak > 0 else ""
+        
+        leaderboard_text += f"{medal} {name}: *{points:.1f} pts*{streak_emoji}\n"
+    
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=leaderboard_text,
+        parse_mode='Markdown'
+    )
+
+
+async def end_game(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
+    """End the game and show final results"""
+    game = game_state.active_games.get(chat_id)
+    if not game:
+        return
+    
+    daily_data = game_state.daily_data[chat_id]
+    
+    if not game.game_leaderboard:
+        await context.bot.send_message(
+            chat_id=chat_id,
+            text="🎮 Game ended! No one scored in this round."
+        )
         del game_state.active_games[chat_id]
+        return
+    
+    sorted_players = sorted(
+        game.game_leaderboard.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )
+    
+    winner_id, winner_points = sorted_players[0]
+    winner_name = daily_data.user_names.get(winner_id, "Champion")
+    
+    result_text = (
+        f"🎮 *GAME COMPLETE!* 🎮\n\n"
+        f"━━━━━━━━━━━━━━━━━━━━\n"
+        f"🏆 *WINNER* 🏆\n"
+        f"👑 *{winner_name}* with *{winner_points:.1f} points*!\n"
+        f"━━━━━━━━━━━━━━━━━━━━\n\n"
+        f"📊 *Final Standings:*\n\n"
+    )
+    
+    medals = ["🥇", "🥈", "🥉"]
+    for idx, (user_id, points) in enumerate(sorted_players[:3]):
+        medal = medals[idx] if idx < 3 else f"{idx + 1}."
+        name = daily_data.user_names.get(user_id, "Unknown")
+        result_text += f"{medal} {name}: *{points:.1f} pts*\n"
+    
+    result_text += (
+        f"\n━━━━━━━━━━━━━━━━━━━━\n"
+        f"🎯 *Congratulations {winner_name}!* 🎯\n"
+        f"Amazing brain power! 🧠⚡\n"
+    )
+    
+    keyboard = [[
+        InlineKeyboardButton("➕ Add to Your Group", url="https://t.me/your_bot_username?startgroup=true")
+    ]]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=result_text,
+        parse_mode='Markdown',
+        reply_markup=reply_markup
+    )
+    
+    if game.timer_task:
+        game.timer_task.cancel()
+    
+    del game_state.active_games[chat_id]
 
 
 async def leaderboard_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Handle /leaderboard command"""
+    """Handle /leaderboard command - shows DAILY leaderboard"""
     chat_id = update.effective_chat.id
     
     if chat_id not in game_state.daily_data:
@@ -500,26 +725,29 @@ async def leaderboard_command(update: Update, context: ContextTypes.DEFAULT_TYPE
     daily_data = game_state.daily_data[chat_id]
     
     if not daily_data.leaderboard:
-        await update.message.reply_text("No scores recorded yet!")
+        await update.message.reply_text("No scores recorded yet today!")
         return
     
-    # Sort by points
     sorted_players = sorted(
         daily_data.leaderboard.items(),
         key=lambda x: x[1],
         reverse=True
-    )[:10]  # Top 10
+    )[:10]
     
-    leaderboard_text = "🏆 *DAILY LEADERBOARD* 🏆\n\n"
+    leaderboard_text = (
+        "🏆 *DAILY LEADERBOARD* 🏆\n"
+        "All games today combined\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+    )
     
     medals = ["🥇", "🥈", "🥉"]
     for idx, (user_id, points) in enumerate(sorted_players):
         medal = medals[idx] if idx < 3 else f"{idx + 1}."
         name = daily_data.user_names.get(user_id, "Unknown")
         streak = daily_data.streaks.get(user_id, 0)
-        streak_emoji = "🔥" if streak > 0 else ""
+        streak_emoji = f" 🔥×{streak}" if streak > 0 else ""
         
-        leaderboard_text += f"{medal} @{name}: *{points:.1f} pts* {streak_emoji}\n"
+        leaderboard_text += f"{medal} {name}: *{points:.1f} pts*{streak_emoji}\n"
     
     await update.message.reply_text(leaderboard_text, parse_mode='Markdown')
 
@@ -541,7 +769,7 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     correct = daily_data.total_correct.get(user_id, 0)
     
     stats_text = (
-        f"📊 *YOUR STATS*\n\n"
+        f"📊 *YOUR DAILY STATS*\n\n"
         f"💰 Total Points: *{points:.1f}*\n"
         f"🔥 Current Streak: *{streak}*\n"
         f"✅ Correct Guesses: *{correct}*\n"
@@ -551,7 +779,7 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         stats_text += f"⚡ Fastest Guess: *{fastest:.1f}s*\n"
     
     if daily_data.steal_used.get(user_id):
-        stats_text += f"\n😈 Steal used today"
+        stats_text += f"\n😈 Steal used in current game"
     else:
         stats_text += f"\n😈 Steal available!"
     
@@ -563,7 +791,6 @@ async def stop_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat_id = update.effective_chat.id
     user_id = update.effective_user.id
     
-    # Check admin rights in group
     if update.effective_chat.type != 'private':
         member = await context.bot.get_chat_member(chat_id, user_id)
         if member.status not in ['creator', 'administrator']:
@@ -584,12 +811,10 @@ async def daily_reset(context: ContextTypes.DEFAULT_TYPE):
     """Reset daily data at midnight IST"""
     logger.info("Performing daily reset...")
     
-    # Post results for all groups
     for chat_id, daily_data in game_state.daily_data.items():
         if daily_data.leaderboard:
             await post_daily_results(context, chat_id)
     
-    # Reset all data
     for daily_data in game_state.daily_data.values():
         daily_data.reset()
     
@@ -611,17 +836,13 @@ async def post_daily_results(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
     
     result_text = "🏆 *DAILY RESULTS* 🏆\n\n"
     
-    # Top 3
     medals = ["🥇 Winner", "🥈 Runner-up", "🥉 Third"]
     for idx in range(min(3, len(sorted_players))):
         user_id, points = sorted_players[idx]
         name = daily_data.user_names.get(user_id, "Unknown")
-        result_text += f"{medals[idx]}: @{name} — *{points:.1f} pts*\n"
+        result_text += f"{medals[idx]}: {name} — *{points:.1f} pts*\n"
     
-    # Find longest streak
     max_streak = max(daily_data.streaks.values()) if daily_data.streaks else 0
-    
-    # Find fastest guess
     min_time = min(daily_data.fastest_guesses.values()) if daily_data.fastest_guesses else 0
     
     result_text += f"\n🔥 Longest Streak: *{max_streak}*\n"
@@ -645,7 +866,6 @@ def main():
     # Bot token - hardcoded for Railway deployment
     TOKEN = "8253975107:AAEDZ8P_b-nmudbgOFICAWdP2_DXs51KkuI"
     
-    # Fallback to environment variable if needed
     if not TOKEN:
         TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
     
@@ -653,7 +873,6 @@ def main():
         logger.error("No TELEGRAM_BOT_TOKEN found!")
         return
     
-    # Load questions
     questions_file = os.getenv('QUESTIONS_FILE', 'questions.json')
     game_state.load_questions(questions_file)
     
@@ -661,7 +880,6 @@ def main():
         logger.error("No questions loaded! Bot cannot start.")
         return
     
-    # Create application with proper configuration for Python 3.13+
     application = (
         Application.builder()
         .token(TOKEN)
@@ -669,16 +887,15 @@ def main():
         .build()
     )
     
-    # Add handlers
     application.add_handler(CommandHandler("start", start_command))
     application.add_handler(CommandHandler("play", play_command))
     application.add_handler(CommandHandler("rules", rules_command))
     application.add_handler(CommandHandler("leaderboard", leaderboard_command))
     application.add_handler(CommandHandler("stats", stats_command))
     application.add_handler(CommandHandler("stop", stop_command))
+    application.add_handler(CallbackQueryHandler(game_selection_callback, pattern="^game_"))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     
-    # Schedule daily reset at midnight IST
     try:
         job_queue = application.job_queue
         if job_queue:
@@ -690,7 +907,6 @@ def main():
     except Exception as e:
         logger.warning(f"Could not set up job queue: {e}")
     
-    # Start bot
     logger.info("Bot starting...")
     application.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
 

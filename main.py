@@ -679,9 +679,16 @@ def main():
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     
     # Schedule daily reset at midnight IST
-    job_queue = application.job_queue
-    midnight_ist = time(hour=0, minute=0, tzinfo=IST)
-    job_queue.run_daily(daily_reset, time=midnight_ist)
+    try:
+        job_queue = application.job_queue
+        if job_queue:
+            midnight_ist = time(hour=0, minute=0, tzinfo=IST)
+            job_queue.run_daily(daily_reset, time=midnight_ist)
+            logger.info("Daily reset scheduler configured")
+        else:
+            logger.warning("JobQueue not available - daily reset will not run automatically")
+    except Exception as e:
+        logger.warning(f"Could not set up job queue: {e}")
     
     # Start bot
     logger.info("Bot starting...")

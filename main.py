@@ -383,17 +383,16 @@ async def start_hint(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
         await handle_no_answer(context, chat_id)
         return
     
-    category_text = ""
-    if game.current_hint == 3 and not game.category_revealed:
-        game.category_revealed = True
-        category_text = f"\n\n🧠 *Category:* {game.current_question.get('category', 'Unknown')}"
+    # Category is always shown below question
+    category = game.current_question.get('category', 'General')
+    category_text = f"📂 *Category:* {category}"
     
     hint_text = (
         f"💡 *Hint {game.current_hint}/{MAX_HINTS}*\n"
-        f"❓ *Question {game.current_question_num}/{game.total_questions}*\n\n"
+        f"❓ *Question {game.current_question_num}/{game.total_questions}*\n"
+        f"{category_text}\n\n"
         f"_{game.current_question['hints'][game.current_hint - 1]}_\n\n"
         f"⏰ Time remaining: *{HINT_DURATION}s*"
-        f"{category_text}"
     )
     
     message = await context.bot.send_message(
@@ -424,16 +423,15 @@ async def update_hint_timer(context: ContextTypes.DEFAULT_TYPE, chat_id: int, du
         if game.answered or chat_id not in game_state.active_games:
             return
         
-        category_text = ""
-        if game.category_revealed:
-            category_text = f"\n\n🧠 *Category:* {game.current_question.get('category', 'Unknown')}"
+        category = game.current_question.get('category', 'General')
+        category_text = f"📂 *Category:* {category}"
         
         hint_text = (
             f"💡 *Hint {game.current_hint}/{MAX_HINTS}*\n"
-            f"❓ *Question {game.current_question_num}/{game.total_questions}*\n\n"
+            f"❓ *Question {game.current_question_num}/{game.total_questions}*\n"
+            f"{category_text}\n\n"
             f"_{game.current_question['hints'][game.current_hint - 1]}_\n\n"
             f"⏰ Time remaining: *{checkpoint}s*"
-            f"{category_text}"
         )
         
         try:
@@ -568,7 +566,9 @@ async def handle_correct_guess(update: Update, context: ContextTypes.DEFAULT_TYP
             )
             await asyncio.sleep(1)
     
+    # Move to next question or end game
     if game.current_question_num < game.total_questions:
+        await asyncio.sleep(1)
         await start_question(context, chat_id)
     else:
         await end_game(context, chat_id)
@@ -592,7 +592,7 @@ async def handle_wrong_guess(update: Update, context: ContextTypes.DEFAULT_TYPE,
 
 async def handle_no_answer(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
     """Handle when no one answers correctly"""
-    game = game_state.active_games[chat_id]
+    game = game_state.active_games.get(chat_id)
     if not game:
         return
     
@@ -609,6 +609,7 @@ async def handle_no_answer(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
     
     await asyncio.sleep(2)
     
+    # Move to next question or end game
     if game.current_question_num < game.total_questions:
         await start_question(context, chat_id)
     else:

@@ -898,7 +898,7 @@ async def post_daily_results(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
 def main():
     """Start the bot"""
     # Bot token - hardcoded for Railway deployment
-    TOKEN = "8253975107:AAEDZ8P_b-nmudbgOFICAWdP2_DXs51KkuI"
+    TOKEN = "8375520887:AAFZtAZk67tvqNZr6aUzL3z_W9reS8Jdz_o"
     
     if not TOKEN:
         TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')

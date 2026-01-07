@@ -642,10 +642,15 @@ async def post_daily_results(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
 
 def main():
     """Start the bot"""
-    # Get token from environment
-    TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+    # Bot token - hardcoded for Railway deployment
+    TOKEN = "8253975107:AAEDZ8P_b-nmudbgOFICAWdP2_DXs51KkuI"
+    
+    # Fallback to environment variable if needed
     if not TOKEN:
-        logger.error("No TELEGRAM_BOT_TOKEN found in environment!")
+        TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+    
+    if not TOKEN:
+        logger.error("No TELEGRAM_BOT_TOKEN found!")
         return
     
     # Load questions

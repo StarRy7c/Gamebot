@@ -28,7 +28,13 @@ logger = logging.getLogger(__name__)
 IST = pytz.timezone('Asia/Kolkata')
 
 # Game Configuration
-HINT_DURATION = 20  # seconds per hint
+HINT_DURATIONS = {
+    1: 7,   # 7 seconds for hint 1
+    2: 10,  # 10 seconds for hint 2
+    3: 12,  # 12 seconds for hint 3
+    4: 15,  # 15 seconds for hint 4
+    5: 10   # 10 seconds for hint 5
+}
 MAX_HINTS = 5
 FAST_FINGER_BONUS_SECONDS = 5
 NEAR_MISS_THRESHOLD = 0.75
@@ -126,6 +132,7 @@ class ActiveGame:
         self.near_miss_shown: Set[int] = set()
         self.timer_task: Optional[asyncio.Task] = None
         self.game_leaderboard: Dict[int, float] = {}  # Points in this game session
+        self.active_players: Set[int] = set()  # Players who have entered the game
 
 
 game_state = GameState()
@@ -162,7 +169,7 @@ def get_add_to_group_button():
     keyboard = [[
         InlineKeyboardButton(
             "➕ Add to Your Group",
-            url="https://t.me/your_bot_username?startgroup=true"
+            url="https://t.me/Guess_ifyoucan_bot?startgroup=true"
         )
     ]]
     return InlineKeyboardMarkup(keyboard)
@@ -178,7 +185,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "🎮 *HOW IT WORKS*\n"
         "━━━━━━━━━━━━━━━━━━━━\n\n"
         "💡 Get 5 progressive hints\n"
-        "⏱️ 20 seconds per hint\n"
+        "⏱️ Variable time per hint (7-15s)\n"
         "🏃 Guess faster = MORE points\n"
         "🔥 Build streaks for multipliers\n"
         "😈 Steal points from wrong guessers\n"
@@ -211,7 +218,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     
     keyboard = [[
-        InlineKeyboardButton("➕ Add to Group & Start Playing!", url="https://t.me/your_bot_username?startgroup=true")
+        InlineKeyboardButton("➕ Add to Group & Start Playing!", url="https://t.me/Guess_ifyoucan_bot?startgroup=true")
     ]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     
@@ -230,9 +237,14 @@ async def rules_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Guess the word from progressive hints!\n\n"
         "⏱️ *Hint System:*\n"
         "• 5 hints total, revealed one by one\n"
-        "• 20 seconds per hint\n"
+        "• Hint 1: 7s | Hint 2: 10s | Hint 3: 12s\n"
+        "• Hint 4: 15s | Hint 5: 10s\n"
         "• Only your FIRST message per hint counts\n"
-        "• Category revealed after Hint 3\n\n"
+        "• Category shown with every hint\n\n"
+        "🎮 *Player Entry:*\n"
+        "• Anyone can join by sending their first guess\n"
+        "• Start with 0 points if incorrect\n"
+        "• Score updates as you play\n\n"
         "💎 *Scoring:*\n"
         "Hint 1: 10 pts | Hint 2: 8 pts | Hint 3: 6 pts\n"
         "Hint 4: 4 pts  | Hint 5: 2 pts\n\n"
@@ -253,7 +265,7 @@ async def rules_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "• Daily leaderboard: /leaderboard command\n"
         "• Reach 50, 100+ points for special recognition!\n\n"
         "🎭 *Features:*\n"
-        "• Near-miss hints when close\n"
+        "• Near-miss hints when 75%+ correct\n"
         "• Daily reset at midnight\n"
         "• No word repeats per day\n"
         "• Clean chat (wrong guesses ignored)\n"
@@ -387,12 +399,14 @@ async def start_hint(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
     category = game.current_question.get('category', 'General')
     category_text = f"📂 *Category:* {category}"
     
+    hint_duration = HINT_DURATIONS[game.current_hint]
+    
     hint_text = (
         f"💡 *Hint {game.current_hint}/{MAX_HINTS}*\n"
         f"❓ *Question {game.current_question_num}/{game.total_questions}*\n"
         f"{category_text}\n\n"
         f"_{game.current_question['hints'][game.current_hint - 1]}_\n\n"
-        f"⏰ Time remaining: *{HINT_DURATION}s*"
+        f"⏰ Time remaining: *{hint_duration}s*"
     )
     
     message = await context.bot.send_message(
@@ -405,7 +419,7 @@ async def start_hint(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
     if game.timer_task:
         game.timer_task.cancel()
     game.timer_task = asyncio.create_task(
-        update_hint_timer(context, chat_id, HINT_DURATION)
+        update_hint_timer(context, chat_id, hint_duration)
     )
 
 
@@ -415,10 +429,16 @@ async def update_hint_timer(context: ContextTypes.DEFAULT_TYPE, chat_id: int, du
     if not game or game.answered:
         return
     
-    checkpoints = [10, 5]
+    # Determine checkpoints based on duration
+    if duration >= 10:
+        checkpoints = [duration - 5, 5]
+    else:
+        checkpoints = [5] if duration > 5 else []
     
     for checkpoint in checkpoints:
-        await asyncio.sleep(duration - checkpoint)
+        wait_time = duration - checkpoint if checkpoint != 5 else (duration - 5 if duration >= 10 else 0)
+        if wait_time > 0:
+            await asyncio.sleep(wait_time)
         
         if game.answered or chat_id not in game_state.active_games:
             return
@@ -444,7 +464,8 @@ async def update_hint_timer(context: ContextTypes.DEFAULT_TYPE, chat_id: int, du
         except Exception as e:
             logger.error(f"Error updating timer: {e}")
     
-    await asyncio.sleep(5)
+    # Wait for remaining time
+    await asyncio.sleep(5 if checkpoints else duration)
     
     if not game.answered and chat_id in game_state.active_games:
         await start_hint(context, chat_id)
@@ -463,6 +484,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     if game.answered:
         return
+    
+    # Add player to active players if not already
+    if user_id not in game.active_players:
+        game.active_players.add(user_id)
+        if user_id not in game.game_leaderboard:
+            game.game_leaderboard[user_id] = 0.0
     
     if user_id in game.first_messages:
         return
@@ -585,9 +612,15 @@ async def handle_wrong_guess(update: Update, context: ContextTypes.DEFAULT_TYPE,
     
     game.wrong_guessers.append((user_id, datetime.now(IST)))
     
-    if is_near_miss(guess, answer) and user_id not in game.near_miss_shown:
+    # Check for near miss (75%+ similarity)
+    similarity = calculate_similarity(guess, answer)
+    if similarity >= NEAR_MISS_THRESHOLD and user_id not in game.near_miss_shown:
         game.near_miss_shown.add(user_id)
-        await update.message.reply_text("👀 Very close... think again.")
+        user_name = update.effective_user.first_name
+        await update.message.reply_text(
+            f"👀 @{update.effective_user.username if update.effective_user.username else user_name}, "
+            f"you're so close! Check the spelling - it's {int(similarity * 100)}% correct! 🔤"
+        )
 
 
 async def handle_no_answer(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
@@ -698,7 +731,7 @@ async def end_game(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
     )
     
     keyboard = [[
-        InlineKeyboardButton("➕ Add to Your Group", url="https://t.me/your_bot_username?startgroup=true")
+        InlineKeyboardButton("➕ Add to Your Group", url="https://t.me/Guess_ifyoucan_bot?startgroup=true")
     ]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     

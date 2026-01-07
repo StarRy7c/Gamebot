@@ -1,205 +1,2552 @@
-[
-  {
-    "word": "apple",
-    "hints": [
-      "It is commonly grown in temperate climates",
-      "It can be eaten raw or cooked",
-      "It is often associated with health",
-      "It comes in red, green, and yellow varieties",
-      "It is famously linked to gravity and Newton"
-    ]
-  },
-  {
-    "word": "banana",
-    "hints": [
-      "It grows in bunches on tall plants",
-      "It is rich in potassium",
-      "It has a soft texture when ripe",
-      "It is usually peeled before eating",
-      "It is yellow when ripe"
-    ]
-  },
-  {
-    "word": "mango",
-    "hints": [
-      "It is widely grown in tropical regions",
-      "It has a single large seed",
-      "It is used in shakes and desserts",
-      "It is a summer seasonal fruit in India",
-      "It is called the king of fruits"
-    ]
-  },
-  {
-    "word": "orange",
-    "hints": [
-      "It has a thick, rough outer skin",
-      "It is rich in vitamin C",
-      "It is commonly used for juice",
-      "It has a citrus aroma",
-      "It shares its name with a color"
-    ]
-  },
-  {
-    "word": "grape",
-    "hints": [
-      "It grows in clusters on vines",
-      "It can be fermented",
-      "It comes in seeded and seedless types",
-      "It is often dried to make raisins",
-      "It is small and round"
-    ]
-  },
-  {
-    "word": "pineapple",
-    "hints": [
-      "It has a rough spiky exterior",
-      "It is not grown on trees",
-      "It contains an enzyme that affects the tongue",
-      "It is used in tropical dishes",
-      "It has a crown of leaves on top"
-    ]
-  },
-  {
-    "word": "strawberry",
-    "hints": [
-      "Its seeds are on the outside",
-      "It is often used in desserts",
-      "It has a heart-like shape",
-      "It is bright red when ripe",
-      "It is commonly eaten with cream"
-    ]
-  },
-  {
-    "word": "watermelon",
-    "hints": [
-      "It has very high water content",
-      "It is popular in summer",
-      "It has black seeds inside",
-      "It is green on the outside",
-      "It is red on the inside"
-    ]
-  },
-  {
-    "word": "papaya",
-    "hints": [
-      "It is often eaten for digestion",
-      "It has many black seeds inside",
-      "It grows on a soft-stem plant",
-      "It is orange when ripe",
-      "It is used in salads and juices"
-    ]
-  },
-  {
-    "word": "kiwi",
-    "hints": [
-      "It has fuzzy brown skin",
-      "It is rich in vitamin C",
-      "It is small and oval-shaped",
-      "It has tiny black seeds",
-      "It is green inside"
-    ]
-  },
-
-  {
-    "word": "pear",
-    "hints": [
-      "It has a narrow top and wide bottom",
-      "It softens when ripe",
-      "It is less acidic than apples",
-      "It grows in cooler climates",
-      "It is often green in color"
-    ]
-  },
-  {
-    "word": "pomegranate",
-    "hints": [
-      "It contains many edible seeds",
-      "It is known for antioxidants",
-      "It has a thick outer skin",
-      "Its seeds are called arils",
-      "It is deep red inside"
-    ]
-  },
-  {
-    "word": "cherry",
-    "hints": [
-      "It has a single hard pit",
-      "It is often used as a topping",
-      "It grows in pairs",
-      "It is small and round",
-      "It is usually red"
-    ]
-  },
-  {
-    "word": "lemon",
-    "hints": [
-      "It has a very sour taste",
-      "It is used in drinks",
-      "It is rich in vitamin C",
-      "It belongs to citrus family",
-      "It is bright yellow"
-    ]
-  },
-  {
-    "word": "guava",
-    "hints": [
-      "It has a strong aroma",
-      "It can be eaten with salt",
-      "It has many tiny seeds",
-      "It is green on the outside",
-      "It is rich in fiber"
-    ]
-  },
-
-  {
-    "word": "fig",
-    "hints": [
-      "It has a soft skin",
-      "It is often dried",
-      "It has many tiny seeds inside",
-      "It is mentioned in ancient texts",
-      "It is sweet when ripe"
-    ]
-  },
-  {
-    "word": "plum",
-    "hints": [
-      "It has smooth skin",
-      "It contains a single pit",
-      "It can be sweet or sour",
-      "It is often purple",
-      "It is used to make prunes"
-    ]
-  },
-  {
-    "word": "apricot",
-    "hints": [
-      "It resembles a small peach",
-      "It has velvety skin",
-      "It is orange-yellow",
-      "It contains one seed",
-      "It is often dried"
-    ]
-  },
-  {
-    "word": "lychee",
-    "hints": [
-      "It has a rough outer shell",
-      "It is native to Asia",
-      "It has translucent flesh",
-      "It contains one seed",
-      "It tastes sweet and floral"
-    ]
-  },
-  {
-    "word": "custard apple",
-    "hints": [
-      "It has a knobby outer surface",
-      "It has creamy pulp",
-      "It contains many black seeds",
-      "It is eaten with a spoon",
-      "It is also called sitaphal"
+{
+  "categories": {
+    "fruits": [
+      {
+        "word": "mango",
+        "hints": [
+          "It is commonly eaten as food (clue frui-1-4447)",
+          "It is often available in markets or farms (clue frui-2-1061)",
+          "It is associated with particular flavors or spices (clue frui-3-4335)",
+          "It is seasonal in many regions (clue frui-4-573)",
+          "It is used in many traditional recipes (clue frui-5-8496)"
+        ]
+      },
+      {
+        "word": "apple",
+        "hints": [
+          "It is commonly eaten as food (clue frui-1-3457)",
+          "It is often available in markets or farms (clue frui-2-3993)",
+          "It is associated with particular flavors or spices (clue frui-3-8497)",
+          "It is seasonal in many regions (clue frui-4-848)",
+          "It is used in many traditional recipes (clue frui-5-7838)"
+        ]
+      },
+      {
+        "word": "banana",
+        "hints": [
+          "It is commonly eaten as food (clue frui-1-7633)",
+          "It is often available in markets or farms (clue frui-2-6333)",
+          "It is associated with particular flavors or spices (clue frui-3-4081)",
+          "It is seasonal in many regions (clue frui-4-4494)",
+          "It is used in many traditional recipes (clue frui-5-7680)"
+        ]
+      },
+      {
+        "word": "orange",
+        "hints": [
+          "It is commonly eaten as food (clue frui-1-3666)",
+          "It is often available in markets or farms (clue frui-2-1028)",
+          "It is associated with particular flavors or spices (clue frui-3-4550)",
+          "It is seasonal in many regions (clue frui-4-30)",
+          "It is used in many traditional recipes (clue frui-5-7841)"
+        ]
+      },
+      {
+        "word": "grape",
+        "hints": [
+          "It is commonly eaten as food (clue frui-1-2872)",
+          "It is often available in markets or farms (clue frui-2-4415)",
+          "It is associated with particular flavors or spices (clue frui-3-2389)",
+          "It is seasonal in many regions (clue frui-4-1366)",
+          "It is used in many traditional recipes (clue frui-5-5150)"
+        ]
+      }
+    ],
+    "vegetables": [
+      {
+        "word": "carrot",
+        "hints": [
+          "It is commonly eaten as food (clue vege-1-1859)",
+          "It is often available in markets or farms (clue vege-2-3440)",
+          "It is associated with particular flavors or spices (clue vege-3-5584)",
+          "It is seasonal in many regions (clue vege-4-1546)",
+          "It is used in many traditional recipes (clue vege-5-5354)"
+        ]
+      },
+      {
+        "word": "potato",
+        "hints": [
+          "It is commonly eaten as food (clue vege-1-7869)",
+          "It is often available in markets or farms (clue vege-2-2376)",
+          "It is associated with particular flavors or spices (clue vege-3-4260)",
+          "It is seasonal in many regions (clue vege-4-8095)",
+          "It is used in many traditional recipes (clue vege-5-6219)"
+        ]
+      },
+      {
+        "word": "tomato",
+        "hints": [
+          "It is commonly eaten as food (clue vege-1-6196)",
+          "It is often available in markets or farms (clue vege-2-6225)",
+          "It is associated with particular flavors or spices (clue vege-3-672)",
+          "It is seasonal in many regions (clue vege-4-5469)",
+          "It is used in many traditional recipes (clue vege-5-8615)"
+        ]
+      },
+      {
+        "word": "onion",
+        "hints": [
+          "It is commonly eaten as food (clue vege-1-8925)",
+          "It is often available in markets or farms (clue vege-2-8578)",
+          "It is associated with particular flavors or spices (clue vege-3-4581)",
+          "It is seasonal in many regions (clue vege-4-1294)",
+          "It is used in many traditional recipes (clue vege-5-1468)"
+        ]
+      },
+      {
+        "word": "spinach",
+        "hints": [
+          "It is commonly eaten as food (clue vege-1-2394)",
+          "It is often available in markets or farms (clue vege-2-94)",
+          "It is associated with particular flavors or spices (clue vege-3-5424)",
+          "It is seasonal in many regions (clue vege-4-7569)",
+          "It is used in many traditional recipes (clue vege-5-7631)"
+        ]
+      }
+    ],
+    "animals": [
+      {
+        "word": "elephant",
+        "hints": [
+          "It is known for particular physical traits (clue anim-1-5566)",
+          "It is commonly found in various habitats (clue anim-2-8692)",
+          "It may be domesticated or wild (clue anim-3-492)",
+          "It has characteristic behaviors or sounds (clue anim-4-5912)",
+          "It plays a role in local ecology or culture (clue anim-5-6872)"
+        ]
+      },
+      {
+        "word": "tiger",
+        "hints": [
+          "It is known for particular physical traits (clue anim-1-6832)",
+          "It is commonly found in various habitats (clue anim-2-5195)",
+          "It may be domesticated or wild (clue anim-3-6835)",
+          "It has characteristic behaviors or sounds (clue anim-4-3051)",
+          "It plays a role in local ecology or culture (clue anim-5-7134)"
+        ]
+      },
+      {
+        "word": "dog",
+        "hints": [
+          "It is known for particular physical traits (clue anim-1-6914)",
+          "It is commonly found in various habitats (clue anim-2-7842)",
+          "It may be domesticated or wild (clue anim-3-9632)",
+          "It has characteristic behaviors or sounds (clue anim-4-8558)",
+          "It plays a role in local ecology or culture (clue anim-5-838)"
+        ]
+      },
+      {
+        "word": "cat",
+        "hints": [
+          "It is known for particular physical traits (clue anim-1-4425)",
+          "It is commonly found in various habitats (clue anim-2-176)",
+          "It may be domesticated or wild (clue anim-3-7265)",
+          "It has characteristic behaviors or sounds (clue anim-4-1932)",
+          "It plays a role in local ecology or culture (clue anim-5-4643)"
+        ]
+      },
+      {
+        "word": "horse",
+        "hints": [
+          "It is known for particular physical traits (clue anim-1-128)",
+          "It is commonly found in various habitats (clue anim-2-8304)",
+          "It may be domesticated or wild (clue anim-3-8896)",
+          "It has characteristic behaviors or sounds (clue anim-4-3689)",
+          "It plays a role in local ecology or culture (clue anim-5-7181)"
+        ]
+      }
+    ],
+    "birds": [
+      {
+        "word": "eagle",
+        "hints": [
+          "It is known for particular physical traits (clue bird-1-2698)",
+          "It is commonly found in various habitats (clue bird-2-941)",
+          "It may be domesticated or wild (clue bird-3-4048)",
+          "It has characteristic behaviors or sounds (clue bird-4-909)",
+          "It plays a role in local ecology or culture (clue bird-5-9705)"
+        ]
+      },
+      {
+        "word": "parrot",
+        "hints": [
+          "It is known for particular physical traits (clue bird-1-3647)",
+          "It is commonly found in various habitats (clue bird-2-2887)",
+          "It may be domesticated or wild (clue bird-3-5397)",
+          "It has characteristic behaviors or sounds (clue bird-4-7635)",
+          "It plays a role in local ecology or culture (clue bird-5-7408)"
+        ]
+      },
+      {
+        "word": "sparrow",
+        "hints": [
+          "It is known for particular physical traits (clue bird-1-9692)",
+          "It is commonly found in various habitats (clue bird-2-5423)",
+          "It may be domesticated or wild (clue bird-3-3884)",
+          "It has characteristic behaviors or sounds (clue bird-4-7584)",
+          "It plays a role in local ecology or culture (clue bird-5-9746)"
+        ]
+      },
+      {
+        "word": "peacock",
+        "hints": [
+          "It is known for particular physical traits (clue bird-1-1975)",
+          "It is commonly found in various habitats (clue bird-2-6837)",
+          "It may be domesticated or wild (clue bird-3-3401)",
+          "It has characteristic behaviors or sounds (clue bird-4-1921)",
+          "It plays a role in local ecology or culture (clue bird-5-1842)"
+        ]
+      },
+      {
+        "word": "owl",
+        "hints": [
+          "It is known for particular physical traits (clue bird-1-9155)",
+          "It is commonly found in various habitats (clue bird-2-5926)",
+          "It may be domesticated or wild (clue bird-3-2857)",
+          "It has characteristic behaviors or sounds (clue bird-4-3039)",
+          "It plays a role in local ecology or culture (clue bird-5-5715)"
+        ]
+      }
+    ],
+    "insects": [
+      {
+        "word": "butterfly",
+        "hints": [
+          "It is known for particular physical traits (clue inse-1-8480)",
+          "It is commonly found in various habitats (clue inse-2-2191)",
+          "It may be domesticated or wild (clue inse-3-8050)",
+          "It has characteristic behaviors or sounds (clue inse-4-7710)",
+          "It plays a role in local ecology or culture (clue inse-5-30)"
+        ]
+      },
+      {
+        "word": "ant",
+        "hints": [
+          "It is known for particular physical traits (clue inse-1-9239)",
+          "It is commonly found in various habitats (clue inse-2-9747)",
+          "It may be domesticated or wild (clue inse-3-836)",
+          "It has characteristic behaviors or sounds (clue inse-4-4249)",
+          "It plays a role in local ecology or culture (clue inse-5-4756)"
+        ]
+      },
+      {
+        "word": "bee",
+        "hints": [
+          "It is known for particular physical traits (clue inse-1-9937)",
+          "It is commonly found in various habitats (clue inse-2-8881)",
+          "It may be domesticated or wild (clue inse-3-6597)",
+          "It has characteristic behaviors or sounds (clue inse-4-2468)",
+          "It plays a role in local ecology or culture (clue inse-5-3254)"
+        ]
+      },
+      {
+        "word": "mosquito",
+        "hints": [
+          "It is known for particular physical traits (clue inse-1-2079)",
+          "It is commonly found in various habitats (clue inse-2-5840)",
+          "It may be domesticated or wild (clue inse-3-1397)",
+          "It has characteristic behaviors or sounds (clue inse-4-2645)",
+          "It plays a role in local ecology or culture (clue inse-5-6100)"
+        ]
+      },
+      {
+        "word": "grasshopper",
+        "hints": [
+          "It is known for particular physical traits (clue inse-1-3797)",
+          "It is commonly found in various habitats (clue inse-2-1345)",
+          "It may be domesticated or wild (clue inse-3-7139)",
+          "It has characteristic behaviors or sounds (clue inse-4-1037)",
+          "It plays a role in local ecology or culture (clue inse-5-1689)"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "word": "clock",
+        "hints": [
+          "It is commonly used for daily tasks (clue obje-1-4123)",
+          "It often requires maintenance or power (clue obje-2-6865)",
+          "It comes in various sizes and models (clue obje-3-8031)",
+          "It is usually found in homes or workplaces (clue obje-4-1261)",
+          "It was developed through technological improvements (clue obje-5-6473)"
+        ]
+      },
+      {
+        "word": "phone",
+        "hints": [
+          "It is commonly used for daily tasks (clue obje-1-426)",
+          "It often requires maintenance or power (clue obje-2-1846)",
+          "It comes in various sizes and models (clue obje-3-2574)",
+          "It is usually found in homes or workplaces (clue obje-4-9790)",
+          "It was developed through technological improvements (clue obje-5-213)"
+        ]
+      },
+      {
+        "word": "chair",
+        "hints": [
+          "It is commonly used for daily tasks (clue obje-1-8617)",
+          "It often requires maintenance or power (clue obje-2-2984)",
+          "It comes in various sizes and models (clue obje-3-5973)",
+          "It is usually found in homes or workplaces (clue obje-4-7472)",
+          "It was developed through technological improvements (clue obje-5-9856)"
+        ]
+      },
+      {
+        "word": "table",
+        "hints": [
+          "It is commonly used for daily tasks (clue obje-1-3705)",
+          "It often requires maintenance or power (clue obje-2-6807)",
+          "It comes in various sizes and models (clue obje-3-8422)",
+          "It is usually found in homes or workplaces (clue obje-4-4542)",
+          "It was developed through technological improvements (clue obje-5-4605)"
+        ]
+      },
+      {
+        "word": "lamp",
+        "hints": [
+          "It is commonly used for daily tasks (clue obje-1-8076)",
+          "It often requires maintenance or power (clue obje-2-426)",
+          "It comes in various sizes and models (clue obje-3-3648)",
+          "It is usually found in homes or workplaces (clue obje-4-5922)",
+          "It was developed through technological improvements (clue obje-5-340)"
+        ]
+      }
+    ],
+    "household_items": [
+      {
+        "word": "refrigerator",
+        "hints": [
+          "It is commonly used for daily tasks (clue hous-1-4744)",
+          "It often requires maintenance or power (clue hous-2-7839)",
+          "It comes in various sizes and models (clue hous-3-630)",
+          "It is usually found in homes or workplaces (clue hous-4-4126)",
+          "It was developed through technological improvements (clue hous-5-5215)"
+        ]
+      },
+      {
+        "word": "microwave",
+        "hints": [
+          "It is commonly used for daily tasks (clue hous-1-815)",
+          "It often requires maintenance or power (clue hous-2-4647)",
+          "It comes in various sizes and models (clue hous-3-8647)",
+          "It is usually found in homes or workplaces (clue hous-4-288)",
+          "It was developed through technological improvements (clue hous-5-8826)"
+        ]
+      },
+      {
+        "word": "kettle",
+        "hints": [
+          "It is commonly used for daily tasks (clue hous-1-8584)",
+          "It often requires maintenance or power (clue hous-2-7983)",
+          "It comes in various sizes and models (clue hous-3-483)",
+          "It is usually found in homes or workplaces (clue hous-4-3078)",
+          "It was developed through technological improvements (clue hous-5-2202)"
+        ]
+      },
+      {
+        "word": "pillow",
+        "hints": [
+          "It is commonly used for daily tasks (clue hous-1-4076)",
+          "It often requires maintenance or power (clue hous-2-2897)",
+          "It comes in various sizes and models (clue hous-3-8613)",
+          "It is usually found in homes or workplaces (clue hous-4-9712)",
+          "It was developed through technological improvements (clue hous-5-6319)"
+        ]
+      },
+      {
+        "word": "blanket",
+        "hints": [
+          "It is commonly used for daily tasks (clue hous-1-6468)",
+          "It often requires maintenance or power (clue hous-2-7397)",
+          "It comes in various sizes and models (clue hous-3-894)",
+          "It is usually found in homes or workplaces (clue hous-4-9470)",
+          "It was developed through technological improvements (clue hous-5-1410)"
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "word": "hammer",
+        "hints": [
+          "It is commonly used for daily tasks (clue tool-1-7357)",
+          "It often requires maintenance or power (clue tool-2-8094)",
+          "It comes in various sizes and models (clue tool-3-5923)",
+          "It is usually found in homes or workplaces (clue tool-4-9988)",
+          "It was developed through technological improvements (clue tool-5-2908)"
+        ]
+      },
+      {
+        "word": "screwdriver",
+        "hints": [
+          "It is commonly used for daily tasks (clue tool-1-8293)",
+          "It often requires maintenance or power (clue tool-2-4929)",
+          "It comes in various sizes and models (clue tool-3-1305)",
+          "It is usually found in homes or workplaces (clue tool-4-4004)",
+          "It was developed through technological improvements (clue tool-5-4085)"
+        ]
+      },
+      {
+        "word": "wrench",
+        "hints": [
+          "It is commonly used for daily tasks (clue tool-1-7760)",
+          "It often requires maintenance or power (clue tool-2-7180)",
+          "It comes in various sizes and models (clue tool-3-7990)",
+          "It is usually found in homes or workplaces (clue tool-4-6759)",
+          "It was developed through technological improvements (clue tool-5-5077)"
+        ]
+      },
+      {
+        "word": "drill",
+        "hints": [
+          "It is commonly used for daily tasks (clue tool-1-5355)",
+          "It often requires maintenance or power (clue tool-2-9614)",
+          "It comes in various sizes and models (clue tool-3-83)",
+          "It is usually found in homes or workplaces (clue tool-4-5490)",
+          "It was developed through technological improvements (clue tool-5-2338)"
+        ]
+      },
+      {
+        "word": "pliers",
+        "hints": [
+          "It is commonly used for daily tasks (clue tool-1-995)",
+          "It often requires maintenance or power (clue tool-2-4703)",
+          "It comes in various sizes and models (clue tool-3-8243)",
+          "It is usually found in homes or workplaces (clue tool-4-346)",
+          "It was developed through technological improvements (clue tool-5-5226)"
+        ]
+      }
+    ],
+    "vehicles": [
+      {
+        "word": "car",
+        "hints": [
+          "It is commonly used for daily tasks (clue vehi-1-8169)",
+          "It often requires maintenance or power (clue vehi-2-4413)",
+          "It comes in various sizes and models (clue vehi-3-3464)",
+          "It is usually found in homes or workplaces (clue vehi-4-2516)",
+          "It was developed through technological improvements (clue vehi-5-9426)"
+        ]
+      },
+      {
+        "word": "bicycle",
+        "hints": [
+          "It is commonly used for daily tasks (clue vehi-1-4026)",
+          "It often requires maintenance or power (clue vehi-2-1872)",
+          "It comes in various sizes and models (clue vehi-3-7686)",
+          "It is usually found in homes or workplaces (clue vehi-4-8897)",
+          "It was developed through technological improvements (clue vehi-5-7275)"
+        ]
+      },
+      {
+        "word": "airplane",
+        "hints": [
+          "It is commonly used for daily tasks (clue vehi-1-8656)",
+          "It often requires maintenance or power (clue vehi-2-5849)",
+          "It comes in various sizes and models (clue vehi-3-687)",
+          "It is usually found in homes or workplaces (clue vehi-4-499)",
+          "It was developed through technological improvements (clue vehi-5-3241)"
+        ]
+      },
+      {
+        "word": "motorcycle",
+        "hints": [
+          "It is commonly used for daily tasks (clue vehi-1-1818)",
+          "It often requires maintenance or power (clue vehi-2-7552)",
+          "It comes in various sizes and models (clue vehi-3-4680)",
+          "It is usually found in homes or workplaces (clue vehi-4-2129)",
+          "It was developed through technological improvements (clue vehi-5-4716)"
+        ]
+      },
+      {
+        "word": "bus",
+        "hints": [
+          "It is commonly used for daily tasks (clue vehi-1-4756)",
+          "It often requires maintenance or power (clue vehi-2-8671)",
+          "It comes in various sizes and models (clue vehi-3-2746)",
+          "It is usually found in homes or workplaces (clue vehi-4-3576)",
+          "It was developed through technological improvements (clue vehi-5-2048)"
+        ]
+      }
+    ],
+    "professions": [
+      {
+        "word": "doctor",
+        "hints": [
+          "People train for years to work in this field (clue prof-1-7308)",
+          "They often work in institutions or organizations (clue prof-2-4817)",
+          "They impact society through their expertise (clue prof-3-8289)",
+          "They require specialized knowledge or training (clue prof-4-6950)",
+          "They are often recognized for their contributions (clue prof-5-2789)"
+        ]
+      },
+      {
+        "word": "teacher",
+        "hints": [
+          "People train for years to work in this field (clue prof-1-6458)",
+          "They often work in institutions or organizations (clue prof-2-8506)",
+          "They impact society through their expertise (clue prof-3-8240)",
+          "They require specialized knowledge or training (clue prof-4-9234)",
+          "They are often recognized for their contributions (clue prof-5-3470)"
+        ]
+      },
+      {
+        "word": "engineer",
+        "hints": [
+          "People train for years to work in this field (clue prof-1-5492)",
+          "They often work in institutions or organizations (clue prof-2-6340)",
+          "They impact society through their expertise (clue prof-3-343)",
+          "They require specialized knowledge or training (clue prof-4-3818)",
+          "They are often recognized for their contributions (clue prof-5-9670)"
+        ]
+      },
+      {
+        "word": "lawyer",
+        "hints": [
+          "People train for years to work in this field (clue prof-1-982)",
+          "They often work in institutions or organizations (clue prof-2-6999)",
+          "They impact society through their expertise (clue prof-3-137)",
+          "They require specialized knowledge or training (clue prof-4-4730)",
+          "They are often recognized for their contributions (clue prof-5-7505)"
+        ]
+      },
+      {
+        "word": "chef",
+        "hints": [
+          "People train for years to work in this field (clue prof-1-6302)",
+          "They often work in institutions or organizations (clue prof-2-8914)",
+          "They impact society through their expertise (clue prof-3-1406)",
+          "They require specialized knowledge or training (clue prof-4-2931)",
+          "They are often recognized for their contributions (clue prof-5-5055)"
+        ]
+      }
+    ],
+    "countries": [
+      {
+        "word": "india",
+        "hints": [
+          "It is located in a specific region of the world (clue coun-1-7641)",
+          "It is known for cultural or historical importance (clue coun-2-5780)",
+          "It attracts visitors or has tourist appeal (clue coun-3-8804)",
+          "It has played a role in regional development (clue coun-4-321)",
+          "It influences local climate, economy, or culture (clue coun-5-9789)"
+        ]
+      },
+      {
+        "word": "japan",
+        "hints": [
+          "It is located in a specific region of the world (clue coun-1-9791)",
+          "It is known for cultural or historical importance (clue coun-2-1130)",
+          "It attracts visitors or has tourist appeal (clue coun-3-5567)",
+          "It has played a role in regional development (clue coun-4-4939)",
+          "It influences local climate, economy, or culture (clue coun-5-411)"
+        ]
+      },
+      {
+        "word": "france",
+        "hints": [
+          "It is located in a specific region of the world (clue coun-1-2516)",
+          "It is known for cultural or historical importance (clue coun-2-6141)",
+          "It attracts visitors or has tourist appeal (clue coun-3-5485)",
+          "It has played a role in regional development (clue coun-4-9167)",
+          "It influences local climate, economy, or culture (clue coun-5-5608)"
+        ]
+      },
+      {
+        "word": "brazil",
+        "hints": [
+          "It is located in a specific region of the world (clue coun-1-7245)",
+          "It is known for cultural or historical importance (clue coun-2-6827)",
+          "It attracts visitors or has tourist appeal (clue coun-3-8871)",
+          "It has played a role in regional development (clue coun-4-4447)",
+          "It influences local climate, economy, or culture (clue coun-5-2787)"
+        ]
+      },
+      {
+        "word": "canada",
+        "hints": [
+          "It is located in a specific region of the world (clue coun-1-1948)",
+          "It is known for cultural or historical importance (clue coun-2-650)",
+          "It attracts visitors or has tourist appeal (clue coun-3-6433)",
+          "It has played a role in regional development (clue coun-4-4209)",
+          "It influences local climate, economy, or culture (clue coun-5-4899)"
+        ]
+      }
+    ],
+    "capitals": [
+      {
+        "word": "paris",
+        "hints": [
+          "It is located in a specific region of the world (clue capi-1-7203)",
+          "It is known for cultural or historical importance (clue capi-2-486)",
+          "It attracts visitors or has tourist appeal (clue capi-3-572)",
+          "It has played a role in regional development (clue capi-4-9476)",
+          "It influences local climate, economy, or culture (clue capi-5-2974)"
+        ]
+      },
+      {
+        "word": "tokyo",
+        "hints": [
+          "It is located in a specific region of the world (clue capi-1-6889)",
+          "It is known for cultural or historical importance (clue capi-2-2744)",
+          "It attracts visitors or has tourist appeal (clue capi-3-4440)",
+          "It has played a role in regional development (clue capi-4-1951)",
+          "It influences local climate, economy, or culture (clue capi-5-3653)"
+        ]
+      },
+      {
+        "word": "new delhi",
+        "hints": [
+          "It is located in a specific region of the world (clue capi-1-837)",
+          "It is known for cultural or historical importance (clue capi-2-2781)",
+          "It attracts visitors or has tourist appeal (clue capi-3-6355)",
+          "It has played a role in regional development (clue capi-4-1179)",
+          "It influences local climate, economy, or culture (clue capi-5-473)"
+        ]
+      },
+      {
+        "word": "london",
+        "hints": [
+          "It is located in a specific region of the world (clue capi-1-25)",
+          "It is known for cultural or historical importance (clue capi-2-9418)",
+          "It attracts visitors or has tourist appeal (clue capi-3-807)",
+          "It has played a role in regional development (clue capi-4-3993)",
+          "It influences local climate, economy, or culture (clue capi-5-2188)"
+        ]
+      },
+      {
+        "word": "beijing",
+        "hints": [
+          "It is located in a specific region of the world (clue capi-1-3279)",
+          "It is known for cultural or historical importance (clue capi-2-2935)",
+          "It attracts visitors or has tourist appeal (clue capi-3-180)",
+          "It has played a role in regional development (clue capi-4-6940)",
+          "It influences local climate, economy, or culture (clue capi-5-9940)"
+        ]
+      }
+    ],
+    "cities": [
+      {
+        "word": "mumbai",
+        "hints": [
+          "It is located in a specific region of the world (clue citi-1-7827)",
+          "It is known for cultural or historical importance (clue citi-2-4652)",
+          "It attracts visitors or has tourist appeal (clue citi-3-6907)",
+          "It has played a role in regional development (clue citi-4-7229)",
+          "It influences local climate, economy, or culture (clue citi-5-4620)"
+        ]
+      },
+      {
+        "word": "new york",
+        "hints": [
+          "It is located in a specific region of the world (clue citi-1-1868)",
+          "It is known for cultural or historical importance (clue citi-2-140)",
+          "It attracts visitors or has tourist appeal (clue citi-3-6271)",
+          "It has played a role in regional development (clue citi-4-8967)",
+          "It influences local climate, economy, or culture (clue citi-5-531)"
+        ]
+      },
+      {
+        "word": "delhi",
+        "hints": [
+          "It is located in a specific region of the world (clue citi-1-7402)",
+          "It is known for cultural or historical importance (clue citi-2-1155)",
+          "It attracts visitors or has tourist appeal (clue citi-3-4432)",
+          "It has played a role in regional development (clue citi-4-5127)",
+          "It influences local climate, economy, or culture (clue citi-5-7453)"
+        ]
+      },
+      {
+        "word": "tokyo_city",
+        "hints": [
+          "It is located in a specific region of the world (clue citi-1-5433)",
+          "It is known for cultural or historical importance (clue citi-2-8242)",
+          "It attracts visitors or has tourist appeal (clue citi-3-9091)",
+          "It has played a role in regional development (clue citi-4-4284)",
+          "It influences local climate, economy, or culture (clue citi-5-3675)"
+        ]
+      },
+      {
+        "word": "sydney",
+        "hints": [
+          "It is located in a specific region of the world (clue citi-1-3971)",
+          "It is known for cultural or historical importance (clue citi-2-8159)",
+          "It attracts visitors or has tourist appeal (clue citi-3-6735)",
+          "It has played a role in regional development (clue citi-4-6235)",
+          "It influences local climate, economy, or culture (clue citi-5-8491)"
+        ]
+      }
+    ],
+    "rivers": [
+      {
+        "word": "ganga",
+        "hints": [
+          "It is located in a specific region of the world (clue rive-1-2003)",
+          "It is known for cultural or historical importance (clue rive-2-1603)",
+          "It attracts visitors or has tourist appeal (clue rive-3-4689)",
+          "It has played a role in regional development (clue rive-4-61)",
+          "It influences local climate, economy, or culture (clue rive-5-6226)"
+        ]
+      },
+      {
+        "word": "amazon",
+        "hints": [
+          "It is located in a specific region of the world (clue rive-1-7815)",
+          "It is known for cultural or historical importance (clue rive-2-3639)",
+          "It attracts visitors or has tourist appeal (clue rive-3-1989)",
+          "It has played a role in regional development (clue rive-4-7627)",
+          "It influences local climate, economy, or culture (clue rive-5-3037)"
+        ]
+      },
+      {
+        "word": "nile",
+        "hints": [
+          "It is located in a specific region of the world (clue rive-1-111)",
+          "It is known for cultural or historical importance (clue rive-2-2783)",
+          "It attracts visitors or has tourist appeal (clue rive-3-551)",
+          "It has played a role in regional development (clue rive-4-7101)",
+          "It influences local climate, economy, or culture (clue rive-5-9274)"
+        ]
+      },
+      {
+        "word": "mississippi",
+        "hints": [
+          "It is located in a specific region of the world (clue rive-1-1015)",
+          "It is known for cultural or historical importance (clue rive-2-2730)",
+          "It attracts visitors or has tourist appeal (clue rive-3-4063)",
+          "It has played a role in regional development (clue rive-4-2706)",
+          "It influences local climate, economy, or culture (clue rive-5-4579)"
+        ]
+      },
+      {
+        "word": "yangtze",
+        "hints": [
+          "It is located in a specific region of the world (clue rive-1-7271)",
+          "It is known for cultural or historical importance (clue rive-2-3414)",
+          "It attracts visitors or has tourist appeal (clue rive-3-3322)",
+          "It has played a role in regional development (clue rive-4-8969)",
+          "It influences local climate, economy, or culture (clue rive-5-7793)"
+        ]
+      }
+    ],
+    "mountains": [
+      {
+        "word": "everest",
+        "hints": [
+          "It is located in a specific region of the world (clue moun-1-1057)",
+          "It is known for cultural or historical importance (clue moun-2-2380)",
+          "It attracts visitors or has tourist appeal (clue moun-3-3659)",
+          "It has played a role in regional development (clue moun-4-5463)",
+          "It influences local climate, economy, or culture (clue moun-5-4700)"
+        ]
+      },
+      {
+        "word": "k2",
+        "hints": [
+          "It is located in a specific region of the world (clue moun-1-3870)",
+          "It is known for cultural or historical importance (clue moun-2-1362)",
+          "It attracts visitors or has tourist appeal (clue moun-3-3988)",
+          "It has played a role in regional development (clue moun-4-3628)",
+          "It influences local climate, economy, or culture (clue moun-5-7256)"
+        ]
+      },
+      {
+        "word": "kilimanjaro",
+        "hints": [
+          "It is located in a specific region of the world (clue moun-1-226)",
+          "It is known for cultural or historical importance (clue moun-2-2479)",
+          "It attracts visitors or has tourist appeal (clue moun-3-4885)",
+          "It has played a role in regional development (clue moun-4-2257)",
+          "It influences local climate, economy, or culture (clue moun-5-2399)"
+        ]
+      },
+      {
+        "word": "denali",
+        "hints": [
+          "It is located in a specific region of the world (clue moun-1-5572)",
+          "It is known for cultural or historical importance (clue moun-2-5659)",
+          "It attracts visitors or has tourist appeal (clue moun-3-1933)",
+          "It has played a role in regional development (clue moun-4-59)",
+          "It influences local climate, economy, or culture (clue moun-5-6229)"
+        ]
+      },
+      {
+        "word": "aconcagua",
+        "hints": [
+          "It is located in a specific region of the world (clue moun-1-6037)",
+          "It is known for cultural or historical importance (clue moun-2-5156)",
+          "It attracts visitors or has tourist appeal (clue moun-3-7721)",
+          "It has played a role in regional development (clue moun-4-7728)",
+          "It influences local climate, economy, or culture (clue moun-5-2060)"
+        ]
+      }
+    ],
+    "oceans_seas": [
+      {
+        "word": "pacific",
+        "hints": [
+          "It is located in a specific region of the world (clue ocea-1-600)",
+          "It is known for cultural or historical importance (clue ocea-2-940)",
+          "It attracts visitors or has tourist appeal (clue ocea-3-9629)",
+          "It has played a role in regional development (clue ocea-4-4306)",
+          "It influences local climate, economy, or culture (clue ocea-5-8859)"
+        ]
+      },
+      {
+        "word": "atlantic",
+        "hints": [
+          "It is located in a specific region of the world (clue ocea-1-8487)",
+          "It is known for cultural or historical importance (clue ocea-2-807)",
+          "It attracts visitors or has tourist appeal (clue ocea-3-9034)",
+          "It has played a role in regional development (clue ocea-4-5260)",
+          "It influences local climate, economy, or culture (clue ocea-5-2363)"
+        ]
+      },
+      {
+        "word": "indian",
+        "hints": [
+          "It is located in a specific region of the world (clue ocea-1-8752)",
+          "It is known for cultural or historical importance (clue ocea-2-9345)",
+          "It attracts visitors or has tourist appeal (clue ocea-3-4429)",
+          "It has played a role in regional development (clue ocea-4-1166)",
+          "It influences local climate, economy, or culture (clue ocea-5-5082)"
+        ]
+      },
+      {
+        "word": "arctic",
+        "hints": [
+          "It is located in a specific region of the world (clue ocea-1-7094)",
+          "It is known for cultural or historical importance (clue ocea-2-4259)",
+          "It attracts visitors or has tourist appeal (clue ocea-3-4244)",
+          "It has played a role in regional development (clue ocea-4-8024)",
+          "It influences local climate, economy, or culture (clue ocea-5-6450)"
+        ]
+      },
+      {
+        "word": "mediterranean",
+        "hints": [
+          "It is located in a specific region of the world (clue ocea-1-2231)",
+          "It is known for cultural or historical importance (clue ocea-2-4552)",
+          "It attracts visitors or has tourist appeal (clue ocea-3-1458)",
+          "It has played a role in regional development (clue ocea-4-3045)",
+          "It influences local climate, economy, or culture (clue ocea-5-7193)"
+        ]
+      }
+    ],
+    "famous_landmarks": [
+      {
+        "word": "taj mahal",
+        "hints": [
+          "It is located in a specific region of the world (clue famo-1-3962)",
+          "It is known for cultural or historical importance (clue famo-2-3767)",
+          "It attracts visitors or has tourist appeal (clue famo-3-3429)",
+          "It has played a role in regional development (clue famo-4-5845)",
+          "It influences local climate, economy, or culture (clue famo-5-4896)"
+        ]
+      },
+      {
+        "word": "eiffel tower",
+        "hints": [
+          "It is located in a specific region of the world (clue famo-1-3361)",
+          "It is known for cultural or historical importance (clue famo-2-1736)",
+          "It attracts visitors or has tourist appeal (clue famo-3-6459)",
+          "It has played a role in regional development (clue famo-4-7063)",
+          "It influences local climate, economy, or culture (clue famo-5-1503)"
+        ]
+      },
+      {
+        "word": "statue of liberty",
+        "hints": [
+          "It is located in a specific region of the world (clue famo-1-3405)",
+          "It is known for cultural or historical importance (clue famo-2-6547)",
+          "It attracts visitors or has tourist appeal (clue famo-3-455)",
+          "It has played a role in regional development (clue famo-4-9926)",
+          "It influences local climate, economy, or culture (clue famo-5-7080)"
+        ]
+      },
+      {
+        "word": "great wall of china",
+        "hints": [
+          "It is located in a specific region of the world (clue famo-1-661)",
+          "It is known for cultural or historical importance (clue famo-2-8621)",
+          "It attracts visitors or has tourist appeal (clue famo-3-9910)",
+          "It has played a role in regional development (clue famo-4-3183)",
+          "It influences local climate, economy, or culture (clue famo-5-5862)"
+        ]
+      },
+      {
+        "word": "colosseum",
+        "hints": [
+          "It is located in a specific region of the world (clue famo-1-1921)",
+          "It is known for cultural or historical importance (clue famo-2-6449)",
+          "It attracts visitors or has tourist appeal (clue famo-3-9465)",
+          "It has played a role in regional development (clue famo-4-7759)",
+          "It influences local climate, economy, or culture (clue famo-5-2207)"
+        ]
+      }
+    ],
+    "science": [
+      {
+        "word": "gravity",
+        "hints": [
+          "It is a fundamental concept in its field (clue scie-1-2521)",
+          "It is commonly measured or observed (clue scie-2-8228)",
+          "It helps explain natural phenomena (clue scie-3-1235)",
+          "It is taught at various education levels (clue scie-4-1381)",
+          "It appears in textbooks and courses (clue scie-5-8115)"
+        ]
+      },
+      {
+        "word": "evolution",
+        "hints": [
+          "It is a fundamental concept in its field (clue scie-1-50)",
+          "It is commonly measured or observed (clue scie-2-5935)",
+          "It helps explain natural phenomena (clue scie-3-1421)",
+          "It is taught at various education levels (clue scie-4-6351)",
+          "It appears in textbooks and courses (clue scie-5-2467)"
+        ]
+      },
+      {
+        "word": "relativity",
+        "hints": [
+          "It is a fundamental concept in its field (clue scie-1-8458)",
+          "It is commonly measured or observed (clue scie-2-8970)",
+          "It helps explain natural phenomena (clue scie-3-1736)",
+          "It is taught at various education levels (clue scie-4-8559)",
+          "It appears in textbooks and courses (clue scie-5-2594)"
+        ]
+      },
+      {
+        "word": "atom",
+        "hints": [
+          "It is a fundamental concept in its field (clue scie-1-6782)",
+          "It is commonly measured or observed (clue scie-2-2485)",
+          "It helps explain natural phenomena (clue scie-3-5416)",
+          "It is taught at various education levels (clue scie-4-703)",
+          "It appears in textbooks and courses (clue scie-5-4538)"
+        ]
+      },
+      {
+        "word": "energy",
+        "hints": [
+          "It is a fundamental concept in its field (clue scie-1-7417)",
+          "It is commonly measured or observed (clue scie-2-6258)",
+          "It helps explain natural phenomena (clue scie-3-4174)",
+          "It is taught at various education levels (clue scie-4-5338)",
+          "It appears in textbooks and courses (clue scie-5-4014)"
+        ]
+      }
+    ],
+    "physics_terms": [
+      {
+        "word": "velocity",
+        "hints": [
+          "It is a fundamental concept in its field (clue phys-1-3309)",
+          "It is commonly measured or observed (clue phys-2-1303)",
+          "It helps explain natural phenomena (clue phys-3-2946)",
+          "It is taught at various education levels (clue phys-4-8920)",
+          "It appears in textbooks and courses (clue phys-5-9500)"
+        ]
+      },
+      {
+        "word": "force",
+        "hints": [
+          "It is a fundamental concept in its field (clue phys-1-7460)",
+          "It is commonly measured or observed (clue phys-2-3990)",
+          "It helps explain natural phenomena (clue phys-3-611)",
+          "It is taught at various education levels (clue phys-4-8923)",
+          "It appears in textbooks and courses (clue phys-5-8053)"
+        ]
+      },
+      {
+        "word": "momentum",
+        "hints": [
+          "It is a fundamental concept in its field (clue phys-1-1874)",
+          "It is commonly measured or observed (clue phys-2-4010)",
+          "It helps explain natural phenomena (clue phys-3-332)",
+          "It is taught at various education levels (clue phys-4-5085)",
+          "It appears in textbooks and courses (clue phys-5-8207)"
+        ]
+      },
+      {
+        "word": "inertia",
+        "hints": [
+          "It is a fundamental concept in its field (clue phys-1-9985)",
+          "It is commonly measured or observed (clue phys-2-807)",
+          "It helps explain natural phenomena (clue phys-3-846)",
+          "It is taught at various education levels (clue phys-4-2796)",
+          "It appears in textbooks and courses (clue phys-5-9848)"
+        ]
+      },
+      {
+        "word": "acceleration",
+        "hints": [
+          "It is a fundamental concept in its field (clue phys-1-514)",
+          "It is commonly measured or observed (clue phys-2-1689)",
+          "It helps explain natural phenomena (clue phys-3-9492)",
+          "It is taught at various education levels (clue phys-4-48)",
+          "It appears in textbooks and courses (clue phys-5-8196)"
+        ]
+      }
+    ],
+    "chemistry_terms": [
+      {
+        "word": "acid",
+        "hints": [
+          "It is a fundamental concept in its field (clue chem-1-7212)",
+          "It is commonly measured or observed (clue chem-2-4736)",
+          "It helps explain natural phenomena (clue chem-3-2738)",
+          "It is taught at various education levels (clue chem-4-3095)",
+          "It appears in textbooks and courses (clue chem-5-7327)"
+        ]
+      },
+      {
+        "word": "base",
+        "hints": [
+          "It is a fundamental concept in its field (clue chem-1-6193)",
+          "It is commonly measured or observed (clue chem-2-2612)",
+          "It helps explain natural phenomena (clue chem-3-4870)",
+          "It is taught at various education levels (clue chem-4-915)",
+          "It appears in textbooks and courses (clue chem-5-7664)"
+        ]
+      },
+      {
+        "word": "molecule",
+        "hints": [
+          "It is a fundamental concept in its field (clue chem-1-2239)",
+          "It is commonly measured or observed (clue chem-2-1920)",
+          "It helps explain natural phenomena (clue chem-3-3920)",
+          "It is taught at various education levels (clue chem-4-2802)",
+          "It appears in textbooks and courses (clue chem-5-1405)"
+        ]
+      },
+      {
+        "word": "reaction",
+        "hints": [
+          "It is a fundamental concept in its field (clue chem-1-353)",
+          "It is commonly measured or observed (clue chem-2-9942)",
+          "It helps explain natural phenomena (clue chem-3-5985)",
+          "It is taught at various education levels (clue chem-4-3280)",
+          "It appears in textbooks and courses (clue chem-5-3937)"
+        ]
+      },
+      {
+        "word": "element",
+        "hints": [
+          "It is a fundamental concept in its field (clue chem-1-1449)",
+          "It is commonly measured or observed (clue chem-2-9652)",
+          "It helps explain natural phenomena (clue chem-3-4016)",
+          "It is taught at various education levels (clue chem-4-709)",
+          "It appears in textbooks and courses (clue chem-5-6467)"
+        ]
+      }
+    ],
+    "biology_terms": [
+      {
+        "word": "photosynthesis",
+        "hints": [
+          "It is a fundamental concept in its field (clue biol-1-9855)",
+          "It is commonly measured or observed (clue biol-2-2488)",
+          "It helps explain natural phenomena (clue biol-3-271)",
+          "It is taught at various education levels (clue biol-4-8383)",
+          "It appears in textbooks and courses (clue biol-5-8366)"
+        ]
+      },
+      {
+        "word": "cell",
+        "hints": [
+          "It is a fundamental concept in its field (clue biol-1-8910)",
+          "It is commonly measured or observed (clue biol-2-6295)",
+          "It helps explain natural phenomena (clue biol-3-419)",
+          "It is taught at various education levels (clue biol-4-2071)",
+          "It appears in textbooks and courses (clue biol-5-4690)"
+        ]
+      },
+      {
+        "word": "dna",
+        "hints": [
+          "It is a fundamental concept in its field (clue biol-1-5904)",
+          "It is commonly measured or observed (clue biol-2-7951)",
+          "It helps explain natural phenomena (clue biol-3-4397)",
+          "It is taught at various education levels (clue biol-4-2270)",
+          "It appears in textbooks and courses (clue biol-5-4943)"
+        ]
+      },
+      {
+        "word": "enzyme",
+        "hints": [
+          "It is a fundamental concept in its field (clue biol-1-9610)",
+          "It is commonly measured or observed (clue biol-2-4731)",
+          "It helps explain natural phenomena (clue biol-3-4384)",
+          "It is taught at various education levels (clue biol-4-6134)",
+          "It appears in textbooks and courses (clue biol-5-9477)"
+        ]
+      },
+      {
+        "word": "ecosystem",
+        "hints": [
+          "It is a fundamental concept in its field (clue biol-1-3887)",
+          "It is commonly measured or observed (clue biol-2-1488)",
+          "It helps explain natural phenomena (clue biol-3-4143)",
+          "It is taught at various education levels (clue biol-4-9149)",
+          "It appears in textbooks and courses (clue biol-5-3491)"
+        ]
+      }
+    ],
+    "space_astronomy": [
+      {
+        "word": "black hole",
+        "hints": [
+          "It is a fundamental concept in its field (clue spac-1-868)",
+          "It is commonly measured or observed (clue spac-2-7588)",
+          "It helps explain natural phenomena (clue spac-3-4759)",
+          "It is taught at various education levels (clue spac-4-4920)",
+          "It appears in textbooks and courses (clue spac-5-2086)"
+        ]
+      },
+      {
+        "word": "sun",
+        "hints": [
+          "It is a fundamental concept in its field (clue spac-1-190)",
+          "It is commonly measured or observed (clue spac-2-137)",
+          "It helps explain natural phenomena (clue spac-3-8410)",
+          "It is taught at various education levels (clue spac-4-873)",
+          "It appears in textbooks and courses (clue spac-5-3091)"
+        ]
+      },
+      {
+        "word": "mars",
+        "hints": [
+          "It is a fundamental concept in its field (clue spac-1-3326)",
+          "It is commonly measured or observed (clue spac-2-2100)",
+          "It helps explain natural phenomena (clue spac-3-1859)",
+          "It is taught at various education levels (clue spac-4-342)",
+          "It appears in textbooks and courses (clue spac-5-1685)"
+        ]
+      },
+      {
+        "word": "moon",
+        "hints": [
+          "It is a fundamental concept in its field (clue spac-1-9063)",
+          "It is commonly measured or observed (clue spac-2-7972)",
+          "It helps explain natural phenomena (clue spac-3-139)",
+          "It is taught at various education levels (clue spac-4-1761)",
+          "It appears in textbooks and courses (clue spac-5-4332)"
+        ]
+      },
+      {
+        "word": "andromeda",
+        "hints": [
+          "It is a fundamental concept in its field (clue spac-1-7130)",
+          "It is commonly measured or observed (clue spac-2-3252)",
+          "It helps explain natural phenomena (clue spac-3-4948)",
+          "It is taught at various education levels (clue spac-4-2796)",
+          "It appears in textbooks and courses (clue spac-5-5407)"
+        ]
+      }
+    ],
+    "scientists": [
+      {
+        "word": "einstein",
+        "hints": [
+          "People train for years to work in this field (clue scie-1-8496)",
+          "They often work in institutions or organizations (clue scie-2-4537)",
+          "They impact society through their expertise (clue scie-3-6011)",
+          "They require specialized knowledge or training (clue scie-4-1923)",
+          "They are often recognized for their contributions (clue scie-5-3008)"
+        ]
+      },
+      {
+        "word": "newton",
+        "hints": [
+          "People train for years to work in this field (clue scie-1-8841)",
+          "They often work in institutions or organizations (clue scie-2-6834)",
+          "They impact society through their expertise (clue scie-3-2597)",
+          "They require specialized knowledge or training (clue scie-4-5658)",
+          "They are often recognized for their contributions (clue scie-5-9782)"
+        ]
+      },
+      {
+        "word": "curie",
+        "hints": [
+          "People train for years to work in this field (clue scie-1-6893)",
+          "They often work in institutions or organizations (clue scie-2-7028)",
+          "They impact society through their expertise (clue scie-3-899)",
+          "They require specialized knowledge or training (clue scie-4-1732)",
+          "They are often recognized for their contributions (clue scie-5-7222)"
+        ]
+      },
+      {
+        "word": "darwin",
+        "hints": [
+          "People train for years to work in this field (clue scie-1-6170)",
+          "They often work in institutions or organizations (clue scie-2-7662)",
+          "They impact society through their expertise (clue scie-3-6154)",
+          "They require specialized knowledge or training (clue scie-4-2828)",
+          "They are often recognized for their contributions (clue scie-5-5394)"
+        ]
+      },
+      {
+        "word": "galileo",
+        "hints": [
+          "People train for years to work in this field (clue scie-1-8006)",
+          "They often work in institutions or organizations (clue scie-2-1921)",
+          "They impact society through their expertise (clue scie-3-8878)",
+          "They require specialized knowledge or training (clue scie-4-2096)",
+          "They are often recognized for their contributions (clue scie-5-4462)"
+        ]
+      }
+    ],
+    "inventions": [
+      {
+        "word": "telephone",
+        "hints": [
+          "It is known for being light. (clue inve-1-9009)",
+          "It is known for being small. (clue inve-2-6326)",
+          "It is commonly associated with food. (clue inve-3-5803)",
+          "It is known for being portable. (clue inve-4-262)",
+          "People often use it for construction. (clue inve-5-5379)"
+        ]
+      },
+      {
+        "word": "wheel",
+        "hints": [
+          "People often use it for entertainment. (clue inve-1-6708)",
+          "It is widely found in the Americas. (clue inve-2-1635)",
+          "People often use it for culture. (clue inve-3-509)",
+          "It is characterized by culture. (clue inve-4-2836)",
+          "It is known for being famous. (clue inve-5-1095)"
+        ]
+      },
+      {
+        "word": "printing press",
+        "hints": [
+          "It is commonly associated with construction. (clue inve-1-5614)",
+          "People often use it for weather. (clue inve-2-2401)",
+          "It is known for being edible. (clue inve-3-7485)",
+          "It is known for being dangerous. (clue inve-4-248)",
+          "People often use it for health. (clue inve-5-4466)"
+        ]
+      },
+      {
+        "word": "light bulb",
+        "hints": [
+          "It is characterized by technology. (clue inve-1-6469)",
+          "It is characterized by transport. (clue inve-2-9899)",
+          "It is characterized by weather. (clue inve-3-2382)",
+          "It is characterized by science. (clue inve-4-2248)",
+          "It is widely found in coastal areas. (clue inve-5-4848)"
+        ]
+      },
+      {
+        "word": "airplane_invention",
+        "hints": [
+          "It is commonly associated with entertainment. (clue inve-1-7749)",
+          "People often use it for sports. (clue inve-2-5064)",
+          "It is known for being dangerous. (clue inve-3-4692)",
+          "It is widely found in tropical regions. (clue inve-4-2158)",
+          "People often use it for technology. (clue inve-5-1028)"
+        ]
+      }
+    ],
+    "elements": [
+      {
+        "word": "oxygen",
+        "hints": [
+          "It is commonly associated with construction. (clue elem-1-9525)",
+          "It is commonly associated with weather. (clue elem-2-5531)",
+          "It is known for being versatile. (clue elem-3-4179)",
+          "It is characterized by nature. (clue elem-4-833)",
+          "It is known for being versatile. (clue elem-5-7353)"
+        ]
+      },
+      {
+        "word": "hydrogen",
+        "hints": [
+          "It is characterized by culture. (clue elem-1-6727)",
+          "It is known for being light. (clue elem-2-9814)",
+          "It is widely found in temperate zones. (clue elem-3-3515)",
+          "It is characterized by navigation. (clue elem-4-340)",
+          "People often use it for technology. (clue elem-5-5421)"
+        ]
+      },
+      {
+        "word": "carbon",
+        "hints": [
+          "It is widely found in mountainous areas. (clue elem-1-1905)",
+          "It is characterized by entertainment. (clue elem-2-4953)",
+          "It is commonly associated with construction. (clue elem-3-9893)",
+          "People often use it for food. (clue elem-4-652)",
+          "It is commonly associated with entertainment. (clue elem-5-1689)"
+        ]
+      },
+      {
+        "word": "iron",
+        "hints": [
+          "It is widely found in mountainous areas. (clue elem-1-6967)",
+          "It is commonly associated with food. (clue elem-2-307)",
+          "It is characterized by navigation. (clue elem-3-2744)",
+          "People often use it for transport. (clue elem-4-9772)",
+          "It is widely found in Oceans. (clue elem-5-9504)"
+        ]
+      },
+      {
+        "word": "gold",
+        "hints": [
+          "It is commonly associated with entertainment. (clue elem-1-5622)",
+          "It is widely found in Asia. (clue elem-2-9950)",
+          "It is known for being rare. (clue elem-3-5707)",
+          "It is known for being edible. (clue elem-4-7569)",
+          "People often use it for construction. (clue elem-5-1940)"
+        ]
+      }
+    ],
+    "movies": [
+      {
+        "word": "inception",
+        "hints": [
+          "It is popular in entertainment (clue movi-1-1159)",
+          "It has a dedicated fanbase (clue movi-2-1134)",
+          "It is known for memorable scenes or roles (clue movi-3-9360)",
+          "It influenced popular culture (clue movi-4-7194)",
+          "It is available across various media platforms (clue movi-5-6092)"
+        ]
+      },
+      {
+        "word": "avatar",
+        "hints": [
+          "It is popular in entertainment (clue movi-1-3424)",
+          "It has a dedicated fanbase (clue movi-2-8931)",
+          "It is known for memorable scenes or roles (clue movi-3-1858)",
+          "It influenced popular culture (clue movi-4-9129)",
+          "It is available across various media platforms (clue movi-5-8778)"
+        ]
+      },
+      {
+        "word": "the godfather",
+        "hints": [
+          "It is popular in entertainment (clue movi-1-6680)",
+          "It has a dedicated fanbase (clue movi-2-9469)",
+          "It is known for memorable scenes or roles (clue movi-3-6470)",
+          "It influenced popular culture (clue movi-4-6398)",
+          "It is available across various media platforms (clue movi-5-1987)"
+        ]
+      },
+      {
+        "word": "pulp fiction",
+        "hints": [
+          "It is popular in entertainment (clue movi-1-5771)",
+          "It has a dedicated fanbase (clue movi-2-4920)",
+          "It is known for memorable scenes or roles (clue movi-3-7589)",
+          "It influenced popular culture (clue movi-4-4024)",
+          "It is available across various media platforms (clue movi-5-7132)"
+        ]
+      },
+      {
+        "word": "shawshank redemption",
+        "hints": [
+          "It is popular in entertainment (clue movi-1-3456)",
+          "It has a dedicated fanbase (clue movi-2-4975)",
+          "It is known for memorable scenes or roles (clue movi-3-2193)",
+          "It influenced popular culture (clue movi-4-4176)",
+          "It is available across various media platforms (clue movi-5-1075)"
+        ]
+      }
+    ],
+    "movie_characters": [
+      {
+        "word": "harry potter",
+        "hints": [
+          "It is popular in entertainment (clue movi-1-6087)",
+          "It has a dedicated fanbase (clue movi-2-3457)",
+          "It is known for memorable scenes or roles (clue movi-3-2537)",
+          "It influenced popular culture (clue movi-4-6800)",
+          "It is available across various media platforms (clue movi-5-370)"
+        ]
+      },
+      {
+        "word": "joker",
+        "hints": [
+          "It is popular in entertainment (clue movi-1-5426)",
+          "It has a dedicated fanbase (clue movi-2-9770)",
+          "It is known for memorable scenes or roles (clue movi-3-8712)",
+          "It influenced popular culture (clue movi-4-6004)",
+          "It is available across various media platforms (clue movi-5-9863)"
+        ]
+      },
+      {
+        "word": "vito corleone",
+        "hints": [
+          "It is popular in entertainment (clue movi-1-5552)",
+          "It has a dedicated fanbase (clue movi-2-5400)",
+          "It is known for memorable scenes or roles (clue movi-3-2943)",
+          "It influenced popular culture (clue movi-4-3677)",
+          "It is available across various media platforms (clue movi-5-2628)"
+        ]
+      },
+      {
+        "word": "forrest gump",
+        "hints": [
+          "It is popular in entertainment (clue movi-1-2842)",
+          "It has a dedicated fanbase (clue movi-2-1424)",
+          "It is known for memorable scenes or roles (clue movi-3-1409)",
+          "It influenced popular culture (clue movi-4-4239)",
+          "It is available across various media platforms (clue movi-5-8731)"
+        ]
+      },
+      {
+        "word": "tony stark",
+        "hints": [
+          "It is popular in entertainment (clue movi-1-2388)",
+          "It has a dedicated fanbase (clue movi-2-7431)",
+          "It is known for memorable scenes or roles (clue movi-3-893)",
+          "It influenced popular culture (clue movi-4-6833)",
+          "It is available across various media platforms (clue movi-5-630)"
+        ]
+      }
+    ],
+    "actors": [
+      {
+        "word": "shah rukh khan",
+        "hints": [
+          "It is characterized by culture. (clue acto-1-5385)",
+          "It is characterized by sports. (clue acto-2-2153)",
+          "It is commonly associated with sports. (clue acto-3-640)",
+          "It is characterized by culture. (clue acto-4-9583)",
+          "It is widely found in mountainous areas. (clue acto-5-6765)"
+        ]
+      },
+      {
+        "word": "leonardo dicaprio",
+        "hints": [
+          "People often use it for construction. (clue acto-1-8754)",
+          "It is widely found in temperate zones. (clue acto-2-9136)",
+          "It is characterized by communication. (clue acto-3-8220)",
+          "It is known for being versatile. (clue acto-4-833)",
+          "It is commonly associated with culture. (clue acto-5-6897)"
+        ]
+      },
+      {
+        "word": "meryl streep",
+        "hints": [
+          "It is commonly associated with technology. (clue acto-1-4127)",
+          "People often use it for food. (clue acto-2-5151)",
+          "It is widely found in urban areas. (clue acto-3-4918)",
+          "People often use it for entertainment. (clue acto-4-1928)",
+          "It is characterized by entertainment. (clue acto-5-7894)"
+        ]
+      },
+      {
+        "word": "tom hanks",
+        "hints": [
+          "It is commonly associated with health. (clue acto-1-7403)",
+          "People often use it for sports. (clue acto-2-5401)",
+          "It is known for being light. (clue acto-3-9703)",
+          "It is characterized by health. (clue acto-4-6969)",
+          "It is commonly associated with transport. (clue acto-5-1361)"
+        ]
+      },
+      {
+        "word": "audrey hepburn",
+        "hints": [
+          "People often use it for navigation. (clue acto-1-68)",
+          "It is widely found in coastal areas. (clue acto-2-2137)",
+          "It is known for being small. (clue acto-3-6782)",
+          "It is characterized by transport. (clue acto-4-8005)",
+          "It is known for being small. (clue acto-5-6116)"
+        ]
+      }
+    ],
+    "tv_shows": [
+      {
+        "word": "breaking bad",
+        "hints": [
+          "It is popular in entertainment (clue tv_s-1-3861)",
+          "It has a dedicated fanbase (clue tv_s-2-6640)",
+          "It is known for memorable scenes or roles (clue tv_s-3-5314)",
+          "It influenced popular culture (clue tv_s-4-8727)",
+          "It is available across various media platforms (clue tv_s-5-638)"
+        ]
+      },
+      {
+        "word": "friends",
+        "hints": [
+          "It is popular in entertainment (clue tv_s-1-2793)",
+          "It has a dedicated fanbase (clue tv_s-2-9026)",
+          "It is known for memorable scenes or roles (clue tv_s-3-8470)",
+          "It influenced popular culture (clue tv_s-4-3369)",
+          "It is available across various media platforms (clue tv_s-5-6931)"
+        ]
+      },
+      {
+        "word": "sherlock",
+        "hints": [
+          "It is popular in entertainment (clue tv_s-1-7098)",
+          "It has a dedicated fanbase (clue tv_s-2-6813)",
+          "It is known for memorable scenes or roles (clue tv_s-3-7032)",
+          "It influenced popular culture (clue tv_s-4-3187)",
+          "It is available across various media platforms (clue tv_s-5-4900)"
+        ]
+      },
+      {
+        "word": "game of thrones",
+        "hints": [
+          "It is popular in entertainment (clue tv_s-1-658)",
+          "It has a dedicated fanbase (clue tv_s-2-1042)",
+          "It is known for memorable scenes or roles (clue tv_s-3-5131)",
+          "It influenced popular culture (clue tv_s-4-5535)",
+          "It is available across various media platforms (clue tv_s-5-2883)"
+        ]
+      },
+      {
+        "word": "stranger things",
+        "hints": [
+          "It is popular in entertainment (clue tv_s-1-3399)",
+          "It has a dedicated fanbase (clue tv_s-2-1780)",
+          "It is known for memorable scenes or roles (clue tv_s-3-1677)",
+          "It influenced popular culture (clue tv_s-4-1861)",
+          "It is available across various media platforms (clue tv_s-5-4820)"
+        ]
+      }
+    ],
+    "web_series": [
+      {
+        "word": "money heist",
+        "hints": [
+          "It is popular in entertainment (clue web_-1-5435)",
+          "It has a dedicated fanbase (clue web_-2-6729)",
+          "It is known for memorable scenes or roles (clue web_-3-3124)",
+          "It influenced popular culture (clue web_-4-137)",
+          "It is available across various media platforms (clue web_-5-8592)"
+        ]
+      },
+      {
+        "word": "the boys",
+        "hints": [
+          "It is popular in entertainment (clue web_-1-1827)",
+          "It has a dedicated fanbase (clue web_-2-6624)",
+          "It is known for memorable scenes or roles (clue web_-3-4258)",
+          "It influenced popular culture (clue web_-4-6959)",
+          "It is available across various media platforms (clue web_-5-1593)"
+        ]
+      },
+      {
+        "word": "dark",
+        "hints": [
+          "It is popular in entertainment (clue web_-1-6091)",
+          "It has a dedicated fanbase (clue web_-2-3246)",
+          "It is known for memorable scenes or roles (clue web_-3-2786)",
+          "It influenced popular culture (clue web_-4-9558)",
+          "It is available across various media platforms (clue web_-5-3683)"
+        ]
+      },
+      {
+        "word": "the crown",
+        "hints": [
+          "It is popular in entertainment (clue web_-1-9344)",
+          "It has a dedicated fanbase (clue web_-2-3956)",
+          "It is known for memorable scenes or roles (clue web_-3-3336)",
+          "It influenced popular culture (clue web_-4-7070)",
+          "It is available across various media platforms (clue web_-5-5783)"
+        ]
+      },
+      {
+        "word": "mirzapur",
+        "hints": [
+          "It is popular in entertainment (clue web_-1-9571)",
+          "It has a dedicated fanbase (clue web_-2-5840)",
+          "It is known for memorable scenes or roles (clue web_-3-8925)",
+          "It influenced popular culture (clue web_-4-8014)",
+          "It is available across various media platforms (clue web_-5-8683)"
+        ]
+      }
+    ],
+    "cartoons": [
+      {
+        "word": "tom and jerry",
+        "hints": [
+          "It is popular in entertainment (clue cart-1-3325)",
+          "It has a dedicated fanbase (clue cart-2-5437)",
+          "It is known for memorable scenes or roles (clue cart-3-2842)",
+          "It influenced popular culture (clue cart-4-4964)",
+          "It is available across various media platforms (clue cart-5-1856)"
+        ]
+      },
+      {
+        "word": "spongebob",
+        "hints": [
+          "It is popular in entertainment (clue cart-1-4733)",
+          "It has a dedicated fanbase (clue cart-2-3637)",
+          "It is known for memorable scenes or roles (clue cart-3-9751)",
+          "It influenced popular culture (clue cart-4-9079)",
+          "It is available across various media platforms (clue cart-5-4434)"
+        ]
+      },
+      {
+        "word": "mickey mouse",
+        "hints": [
+          "It is popular in entertainment (clue cart-1-3779)",
+          "It has a dedicated fanbase (clue cart-2-1893)",
+          "It is known for memorable scenes or roles (clue cart-3-8037)",
+          "It influenced popular culture (clue cart-4-1256)",
+          "It is available across various media platforms (clue cart-5-8225)"
+        ]
+      },
+      {
+        "word": "looney tunes",
+        "hints": [
+          "It is popular in entertainment (clue cart-1-2196)",
+          "It has a dedicated fanbase (clue cart-2-9083)",
+          "It is known for memorable scenes or roles (clue cart-3-5910)",
+          "It influenced popular culture (clue cart-4-1861)",
+          "It is available across various media platforms (clue cart-5-5631)"
+        ]
+      },
+      {
+        "word": "pokémon",
+        "hints": [
+          "It is popular in entertainment (clue cart-1-587)",
+          "It has a dedicated fanbase (clue cart-2-3085)",
+          "It is known for memorable scenes or roles (clue cart-3-8909)",
+          "It influenced popular culture (clue cart-4-4664)",
+          "It is available across various media platforms (clue cart-5-6643)"
+        ]
+      }
+    ],
+    "anime": [
+      {
+        "word": "naruto",
+        "hints": [
+          "It is popular in entertainment (clue anim-1-9043)",
+          "It has a dedicated fanbase (clue anim-2-8858)",
+          "It is known for memorable scenes or roles (clue anim-3-7862)",
+          "It influenced popular culture (clue anim-4-5509)",
+          "It is available across various media platforms (clue anim-5-2579)"
+        ]
+      },
+      {
+        "word": "one piece",
+        "hints": [
+          "It is popular in entertainment (clue anim-1-1122)",
+          "It has a dedicated fanbase (clue anim-2-9885)",
+          "It is known for memorable scenes or roles (clue anim-3-1075)",
+          "It influenced popular culture (clue anim-4-8160)",
+          "It is available across various media platforms (clue anim-5-5393)"
+        ]
+      },
+      {
+        "word": "attack on titan",
+        "hints": [
+          "It is popular in entertainment (clue anim-1-4004)",
+          "It has a dedicated fanbase (clue anim-2-5536)",
+          "It is known for memorable scenes or roles (clue anim-3-8824)",
+          "It influenced popular culture (clue anim-4-8873)",
+          "It is available across various media platforms (clue anim-5-6608)"
+        ]
+      },
+      {
+        "word": "dragon ball",
+        "hints": [
+          "It is popular in entertainment (clue anim-1-4522)",
+          "It has a dedicated fanbase (clue anim-2-3056)",
+          "It is known for memorable scenes or roles (clue anim-3-9345)",
+          "It influenced popular culture (clue anim-4-5578)",
+          "It is available across various media platforms (clue anim-5-8453)"
+        ]
+      },
+      {
+        "word": "death note",
+        "hints": [
+          "It is popular in entertainment (clue anim-1-8641)",
+          "It has a dedicated fanbase (clue anim-2-7788)",
+          "It is known for memorable scenes or roles (clue anim-3-6619)",
+          "It influenced popular culture (clue anim-4-5792)",
+          "It is available across various media platforms (clue anim-5-8934)"
+        ]
+      }
+    ],
+    "sports": [
+      {
+        "word": "cricket",
+        "hints": [
+          "It involves skill and practice (clue spor-1-9518)",
+          "It is governed by rules and regulations (clue spor-2-1661)",
+          "It is played professionally or casually (clue spor-3-4565)",
+          "It can be regional or global in popularity (clue spor-4-7705)",
+          "It features in major competitions or tournaments (clue spor-5-9160)"
+        ]
+      },
+      {
+        "word": "football",
+        "hints": [
+          "It involves skill and practice (clue spor-1-6280)",
+          "It is governed by rules and regulations (clue spor-2-9135)",
+          "It is played professionally or casually (clue spor-3-213)",
+          "It can be regional or global in popularity (clue spor-4-4585)",
+          "It features in major competitions or tournaments (clue spor-5-3729)"
+        ]
+      },
+      {
+        "word": "basketball",
+        "hints": [
+          "It involves skill and practice (clue spor-1-597)",
+          "It is governed by rules and regulations (clue spor-2-1390)",
+          "It is played professionally or casually (clue spor-3-7207)",
+          "It can be regional or global in popularity (clue spor-4-6271)",
+          "It features in major competitions or tournaments (clue spor-5-3607)"
+        ]
+      },
+      {
+        "word": "tennis",
+        "hints": [
+          "It involves skill and practice (clue spor-1-8596)",
+          "It is governed by rules and regulations (clue spor-2-8494)",
+          "It is played professionally or casually (clue spor-3-7021)",
+          "It can be regional or global in popularity (clue spor-4-5964)",
+          "It features in major competitions or tournaments (clue spor-5-348)"
+        ]
+      },
+      {
+        "word": "hockey",
+        "hints": [
+          "It involves skill and practice (clue spor-1-6877)",
+          "It is governed by rules and regulations (clue spor-2-2263)",
+          "It is played professionally or casually (clue spor-3-7734)",
+          "It can be regional or global in popularity (clue spor-4-9978)",
+          "It features in major competitions or tournaments (clue spor-5-5171)"
+        ]
+      }
+    ],
+    "sportspersons": [
+      {
+        "word": "virat kohli",
+        "hints": [
+          "It is known for particular physical traits (clue spor-1-9679)",
+          "It is commonly found in various habitats (clue spor-2-9187)",
+          "It may be domesticated or wild (clue spor-3-2517)",
+          "It has characteristic behaviors or sounds (clue spor-4-1560)",
+          "It plays a role in local ecology or culture (clue spor-5-1982)"
+        ]
+      },
+      {
+        "word": "serena williams",
+        "hints": [
+          "It is known for particular physical traits (clue spor-1-9180)",
+          "It is commonly found in various habitats (clue spor-2-8700)",
+          "It may be domesticated or wild (clue spor-3-6245)",
+          "It has characteristic behaviors or sounds (clue spor-4-2793)",
+          "It plays a role in local ecology or culture (clue spor-5-3869)"
+        ]
+      },
+      {
+        "word": "lionel messi",
+        "hints": [
+          "It is known for particular physical traits (clue spor-1-5798)",
+          "It is commonly found in various habitats (clue spor-2-6043)",
+          "It may be domesticated or wild (clue spor-3-9401)",
+          "It has characteristic behaviors or sounds (clue spor-4-497)",
+          "It plays a role in local ecology or culture (clue spor-5-7829)"
+        ]
+      },
+      {
+        "word": "michael jordan",
+        "hints": [
+          "It is known for particular physical traits (clue spor-1-8574)",
+          "It is commonly found in various habitats (clue spor-2-6708)",
+          "It may be domesticated or wild (clue spor-3-4318)",
+          "It has characteristic behaviors or sounds (clue spor-4-5694)",
+          "It plays a role in local ecology or culture (clue spor-5-8433)"
+        ]
+      },
+      {
+        "word": "sachin tendulkar",
+        "hints": [
+          "It is known for particular physical traits (clue spor-1-4293)",
+          "It is commonly found in various habitats (clue spor-2-5220)",
+          "It may be domesticated or wild (clue spor-3-2911)",
+          "It has characteristic behaviors or sounds (clue spor-4-7183)",
+          "It plays a role in local ecology or culture (clue spor-5-2005)"
+        ]
+      }
+    ],
+    "cricket_terms": [
+      {
+        "word": "yorker",
+        "hints": [
+          "It is a fundamental concept in its field (clue cric-1-6536)",
+          "It is commonly measured or observed (clue cric-2-6331)",
+          "It helps explain natural phenomena (clue cric-3-8236)",
+          "It is taught at various education levels (clue cric-4-9699)",
+          "It appears in textbooks and courses (clue cric-5-3286)"
+        ]
+      },
+      {
+        "word": "sixer",
+        "hints": [
+          "It is a fundamental concept in its field (clue cric-1-5892)",
+          "It is commonly measured or observed (clue cric-2-6839)",
+          "It helps explain natural phenomena (clue cric-3-458)",
+          "It is taught at various education levels (clue cric-4-1214)",
+          "It appears in textbooks and courses (clue cric-5-6735)"
+        ]
+      },
+      {
+        "word": "duck",
+        "hints": [
+          "It is a fundamental concept in its field (clue cric-1-1932)",
+          "It is commonly measured or observed (clue cric-2-6937)",
+          "It helps explain natural phenomena (clue cric-3-3820)",
+          "It is taught at various education levels (clue cric-4-6994)",
+          "It appears in textbooks and courses (clue cric-5-6419)"
+        ]
+      },
+      {
+        "word": "wicket",
+        "hints": [
+          "It is a fundamental concept in its field (clue cric-1-5018)",
+          "It is commonly measured or observed (clue cric-2-9475)",
+          "It helps explain natural phenomena (clue cric-3-9491)",
+          "It is taught at various education levels (clue cric-4-2966)",
+          "It appears in textbooks and courses (clue cric-5-5999)"
+        ]
+      },
+      {
+        "word": "maiden",
+        "hints": [
+          "It is a fundamental concept in its field (clue cric-1-407)",
+          "It is commonly measured or observed (clue cric-2-5351)",
+          "It helps explain natural phenomena (clue cric-3-3360)",
+          "It is taught at various education levels (clue cric-4-5181)",
+          "It appears in textbooks and courses (clue cric-5-4704)"
+        ]
+      }
+    ],
+    "football_terms": [
+      {
+        "word": "offside",
+        "hints": [
+          "It is a fundamental concept in its field (clue foot-1-3163)",
+          "It is commonly measured or observed (clue foot-2-9363)",
+          "It helps explain natural phenomena (clue foot-3-7188)",
+          "It is taught at various education levels (clue foot-4-3610)",
+          "It appears in textbooks and courses (clue foot-5-2004)"
+        ]
+      },
+      {
+        "word": "penalty",
+        "hints": [
+          "It is a fundamental concept in its field (clue foot-1-4052)",
+          "It is commonly measured or observed (clue foot-2-3278)",
+          "It helps explain natural phenomena (clue foot-3-5887)",
+          "It is taught at various education levels (clue foot-4-8472)",
+          "It appears in textbooks and courses (clue foot-5-5712)"
+        ]
+      },
+      {
+        "word": "corner",
+        "hints": [
+          "It is a fundamental concept in its field (clue foot-1-1116)",
+          "It is commonly measured or observed (clue foot-2-1592)",
+          "It helps explain natural phenomena (clue foot-3-217)",
+          "It is taught at various education levels (clue foot-4-4148)",
+          "It appears in textbooks and courses (clue foot-5-7908)"
+        ]
+      },
+      {
+        "word": "goal kick",
+        "hints": [
+          "It is a fundamental concept in its field (clue foot-1-9179)",
+          "It is commonly measured or observed (clue foot-2-6962)",
+          "It helps explain natural phenomena (clue foot-3-5735)",
+          "It is taught at various education levels (clue foot-4-8940)",
+          "It appears in textbooks and courses (clue foot-5-8529)"
+        ]
+      },
+      {
+        "word": "throw-in",
+        "hints": [
+          "It is a fundamental concept in its field (clue foot-1-4955)",
+          "It is commonly measured or observed (clue foot-2-1367)",
+          "It helps explain natural phenomena (clue foot-3-3535)",
+          "It is taught at various education levels (clue foot-4-8807)",
+          "It appears in textbooks and courses (clue foot-5-3722)"
+        ]
+      }
+    ],
+    "olympic_sports": [
+      {
+        "word": "gymnastics",
+        "hints": [
+          "It involves skill and practice (clue olym-1-7716)",
+          "It is governed by rules and regulations (clue olym-2-2514)",
+          "It is played professionally or casually (clue olym-3-8834)",
+          "It can be regional or global in popularity (clue olym-4-4951)",
+          "It features in major competitions or tournaments (clue olym-5-1900)"
+        ]
+      },
+      {
+        "word": "swimming",
+        "hints": [
+          "It involves skill and practice (clue olym-1-1856)",
+          "It is governed by rules and regulations (clue olym-2-7532)",
+          "It is played professionally or casually (clue olym-3-7946)",
+          "It can be regional or global in popularity (clue olym-4-3329)",
+          "It features in major competitions or tournaments (clue olym-5-1172)"
+        ]
+      },
+      {
+        "word": "athletics",
+        "hints": [
+          "It involves skill and practice (clue olym-1-1554)",
+          "It is governed by rules and regulations (clue olym-2-6503)",
+          "It is played professionally or casually (clue olym-3-5310)",
+          "It can be regional or global in popularity (clue olym-4-3611)",
+          "It features in major competitions or tournaments (clue olym-5-8413)"
+        ]
+      },
+      {
+        "word": "weightlifting",
+        "hints": [
+          "It involves skill and practice (clue olym-1-3023)",
+          "It is governed by rules and regulations (clue olym-2-957)",
+          "It is played professionally or casually (clue olym-3-5007)",
+          "It can be regional or global in popularity (clue olym-4-5186)",
+          "It features in major competitions or tournaments (clue olym-5-5394)"
+        ]
+      },
+      {
+        "word": "cycling",
+        "hints": [
+          "It involves skill and practice (clue olym-1-2276)",
+          "It is governed by rules and regulations (clue olym-2-3521)",
+          "It is played professionally or casually (clue olym-3-7944)",
+          "It can be regional or global in popularity (clue olym-4-975)",
+          "It features in major competitions or tournaments (clue olym-5-2884)"
+        ]
+      }
+    ],
+    "video_games": [
+      {
+        "word": "minecraft",
+        "hints": [
+          "It involves skill and practice (clue vide-1-4416)",
+          "It is governed by rules and regulations (clue vide-2-7401)",
+          "It is played professionally or casually (clue vide-3-2216)",
+          "It can be regional or global in popularity (clue vide-4-1979)",
+          "It features in major competitions or tournaments (clue vide-5-477)"
+        ]
+      },
+      {
+        "word": "fortnite",
+        "hints": [
+          "It involves skill and practice (clue vide-1-8589)",
+          "It is governed by rules and regulations (clue vide-2-4983)",
+          "It is played professionally or casually (clue vide-3-9250)",
+          "It can be regional or global in popularity (clue vide-4-7634)",
+          "It features in major competitions or tournaments (clue vide-5-5551)"
+        ]
+      },
+      {
+        "word": "call of duty",
+        "hints": [
+          "It involves skill and practice (clue vide-1-5201)",
+          "It is governed by rules and regulations (clue vide-2-850)",
+          "It is played professionally or casually (clue vide-3-4852)",
+          "It can be regional or global in popularity (clue vide-4-3575)",
+          "It features in major competitions or tournaments (clue vide-5-3170)"
+        ]
+      },
+      {
+        "word": "fifa",
+        "hints": [
+          "It involves skill and practice (clue vide-1-7297)",
+          "It is governed by rules and regulations (clue vide-2-2880)",
+          "It is played professionally or casually (clue vide-3-9725)",
+          "It can be regional or global in popularity (clue vide-4-5714)",
+          "It features in major competitions or tournaments (clue vide-5-206)"
+        ]
+      },
+      {
+        "word": "legend of zelda",
+        "hints": [
+          "It involves skill and practice (clue vide-1-9081)",
+          "It is governed by rules and regulations (clue vide-2-7532)",
+          "It is played professionally or casually (clue vide-3-9885)",
+          "It can be regional or global in popularity (clue vide-4-7288)",
+          "It features in major competitions or tournaments (clue vide-5-4834)"
+        ]
+      }
+    ],
+    "board_games": [
+      {
+        "word": "chess",
+        "hints": [
+          "It involves skill and practice (clue boar-1-2427)",
+          "It is governed by rules and regulations (clue boar-2-5031)",
+          "It is played professionally or casually (clue boar-3-7328)",
+          "It can be regional or global in popularity (clue boar-4-8069)",
+          "It features in major competitions or tournaments (clue boar-5-1571)"
+        ]
+      },
+      {
+        "word": "monopoly",
+        "hints": [
+          "It involves skill and practice (clue boar-1-2791)",
+          "It is governed by rules and regulations (clue boar-2-6397)",
+          "It is played professionally or casually (clue boar-3-1816)",
+          "It can be regional or global in popularity (clue boar-4-5860)",
+          "It features in major competitions or tournaments (clue boar-5-9574)"
+        ]
+      },
+      {
+        "word": "scrabble",
+        "hints": [
+          "It involves skill and practice (clue boar-1-5950)",
+          "It is governed by rules and regulations (clue boar-2-7227)",
+          "It is played professionally or casually (clue boar-3-8)",
+          "It can be regional or global in popularity (clue boar-4-3047)",
+          "It features in major competitions or tournaments (clue boar-5-4962)"
+        ]
+      },
+      {
+        "word": "carrom",
+        "hints": [
+          "It involves skill and practice (clue boar-1-8520)",
+          "It is governed by rules and regulations (clue boar-2-1824)",
+          "It is played professionally or casually (clue boar-3-7276)",
+          "It can be regional or global in popularity (clue boar-4-998)",
+          "It features in major competitions or tournaments (clue boar-5-7036)"
+        ]
+      },
+      {
+        "word": "catan",
+        "hints": [
+          "It involves skill and practice (clue boar-1-8482)",
+          "It is governed by rules and regulations (clue boar-2-2655)",
+          "It is played professionally or casually (clue boar-3-9660)",
+          "It can be regional or global in popularity (clue boar-4-1662)",
+          "It features in major competitions or tournaments (clue boar-5-925)"
+        ]
+      }
+    ],
+    "books": [
+      {
+        "word": "harry potter series",
+        "hints": [
+          "It is popular in entertainment (clue book-1-2506)",
+          "It has a dedicated fanbase (clue book-2-1248)",
+          "It is known for memorable scenes or roles (clue book-3-6142)",
+          "It influenced popular culture (clue book-4-4566)",
+          "It is available across various media platforms (clue book-5-8941)"
+        ]
+      },
+      {
+        "word": "lord of the rings",
+        "hints": [
+          "It is popular in entertainment (clue book-1-8410)",
+          "It has a dedicated fanbase (clue book-2-2833)",
+          "It is known for memorable scenes or roles (clue book-3-4857)",
+          "It influenced popular culture (clue book-4-8718)",
+          "It is available across various media platforms (clue book-5-7954)"
+        ]
+      },
+      {
+        "word": "to kill a mockingbird",
+        "hints": [
+          "It is popular in entertainment (clue book-1-7498)",
+          "It has a dedicated fanbase (clue book-2-453)",
+          "It is known for memorable scenes or roles (clue book-3-587)",
+          "It influenced popular culture (clue book-4-6806)",
+          "It is available across various media platforms (clue book-5-9088)"
+        ]
+      },
+      {
+        "word": "1984",
+        "hints": [
+          "It is popular in entertainment (clue book-1-2337)",
+          "It has a dedicated fanbase (clue book-2-1096)",
+          "It is known for memorable scenes or roles (clue book-3-4734)",
+          "It influenced popular culture (clue book-4-3999)",
+          "It is available across various media platforms (clue book-5-3524)"
+        ]
+      },
+      {
+        "word": "the alchemist",
+        "hints": [
+          "It is popular in entertainment (clue book-1-3995)",
+          "It has a dedicated fanbase (clue book-2-950)",
+          "It is known for memorable scenes or roles (clue book-3-1705)",
+          "It influenced popular culture (clue book-4-9311)",
+          "It is available across various media platforms (clue book-5-9882)"
+        ]
+      }
+    ],
+    "authors": [
+      {
+        "word": "j k rowling",
+        "hints": [
+          "People train for years to work in this field (clue auth-1-8441)",
+          "They often work in institutions or organizations (clue auth-2-6598)",
+          "They impact society through their expertise (clue auth-3-1314)",
+          "They require specialized knowledge or training (clue auth-4-6392)",
+          "They are often recognized for their contributions (clue auth-5-6832)"
+        ]
+      },
+      {
+        "word": "j r r tolkien",
+        "hints": [
+          "People train for years to work in this field (clue auth-1-4556)",
+          "They often work in institutions or organizations (clue auth-2-6185)",
+          "They impact society through their expertise (clue auth-3-480)",
+          "They require specialized knowledge or training (clue auth-4-3570)",
+          "They are often recognized for their contributions (clue auth-5-9818)"
+        ]
+      },
+      {
+        "word": "george orwell",
+        "hints": [
+          "People train for years to work in this field (clue auth-1-991)",
+          "They often work in institutions or organizations (clue auth-2-6834)",
+          "They impact society through their expertise (clue auth-3-4435)",
+          "They require specialized knowledge or training (clue auth-4-9310)",
+          "They are often recognized for their contributions (clue auth-5-6566)"
+        ]
+      },
+      {
+        "word": "paulo coelho",
+        "hints": [
+          "People train for years to work in this field (clue auth-1-6747)",
+          "They often work in institutions or organizations (clue auth-2-4813)",
+          "They impact society through their expertise (clue auth-3-9270)",
+          "They require specialized knowledge or training (clue auth-4-7005)",
+          "They are often recognized for their contributions (clue auth-5-4123)"
+        ]
+      },
+      {
+        "word": "agatha christie",
+        "hints": [
+          "People train for years to work in this field (clue auth-1-1478)",
+          "They often work in institutions or organizations (clue auth-2-510)",
+          "They impact society through their expertise (clue auth-3-8953)",
+          "They require specialized knowledge or training (clue auth-4-7310)",
+          "They are often recognized for their contributions (clue auth-5-4552)"
+        ]
+      }
+    ],
+    "mythology": [
+      {
+        "word": "mahabharata",
+        "hints": [
+          "It is widely found in coastal areas. (clue myth-1-8647)",
+          "It is widely found in forests. (clue myth-2-2518)",
+          "People often use it for communication. (clue myth-3-5287)",
+          "It is widely found in coastal areas. (clue myth-4-3896)",
+          "It is commonly associated with transport. (clue myth-5-910)"
+        ]
+      },
+      {
+        "word": "ramayana",
+        "hints": [
+          "It is characterized by transport. (clue myth-1-760)",
+          "It is commonly associated with food. (clue myth-2-2223)",
+          "It is known for being small. (clue myth-3-513)",
+          "It is widely found in forests. (clue myth-4-9189)",
+          "It is characterized by navigation. (clue myth-5-1632)"
+        ]
+      },
+      {
+        "word": "iliad",
+        "hints": [
+          "It is commonly associated with food. (clue myth-1-6773)",
+          "People often use it for navigation. (clue myth-2-5512)",
+          "It is characterized by technology. (clue myth-3-8236)",
+          "It is known for being light. (clue myth-4-5316)",
+          "It is known for being valuable. (clue myth-5-1575)"
+        ]
+      },
+      {
+        "word": "odyssey",
+        "hints": [
+          "It is commonly associated with technology. (clue myth-1-9223)",
+          "People often use it for technology. (clue myth-2-7139)",
+          "It is known for being useful. (clue myth-3-281)",
+          "It is widely found in Europe. (clue myth-4-7315)",
+          "It is known for being heavy. (clue myth-5-505)"
+        ]
+      },
+      {
+        "word": "norse myths",
+        "hints": [
+          "People often use it for weather. (clue myth-1-8066)",
+          "It is widely found in temperate zones. (clue myth-2-3933)",
+          "It is known for being modern. (clue myth-3-9393)",
+          "It is commonly associated with weather. (clue myth-4-5298)",
+          "It is characterized by health. (clue myth-5-8186)"
+        ]
+      }
+    ],
+    "gods_legends": [
+      {
+        "word": "krishna",
+        "hints": [
+          "It is characterized by science. (clue gods-1-4126)",
+          "It is characterized by entertainment. (clue gods-2-1783)",
+          "It is commonly associated with health. (clue gods-3-6153)",
+          "It is widely found in globally. (clue gods-4-9129)",
+          "It is commonly associated with health. (clue gods-5-1433)"
+        ]
+      },
+      {
+        "word": "zeus",
+        "hints": [
+          "People often use it for weather. (clue gods-1-213)",
+          "It is commonly associated with communication. (clue gods-2-1466)",
+          "It is characterized by construction. (clue gods-3-6623)",
+          "People often use it for navigation. (clue gods-4-4138)",
+          "People often use it for construction. (clue gods-5-4780)"
+        ]
+      },
+      {
+        "word": "odin",
+        "hints": [
+          "It is commonly associated with entertainment. (clue gods-1-4248)",
+          "It is widely found in Asia. (clue gods-2-4479)",
+          "It is widely found in urban areas. (clue gods-3-2369)",
+          "People often use it for technology. (clue gods-4-2260)",
+          "It is characterized by sports. (clue gods-5-7278)"
+        ]
+      },
+      {
+        "word": "ra",
+        "hints": [
+          "People often use it for entertainment. (clue gods-1-1433)",
+          "People often use it for entertainment. (clue gods-2-4191)",
+          "It is known for being colorful. (clue gods-3-1886)",
+          "It is commonly associated with construction. (clue gods-4-8601)",
+          "People often use it for food. (clue gods-5-5413)"
+        ]
+      },
+      {
+        "word": "athena",
+        "hints": [
+          "It is characterized by entertainment. (clue gods-1-2398)",
+          "It is characterized by weather. (clue gods-2-5173)",
+          "People often use it for sports. (clue gods-3-7223)",
+          "It is characterized by science. (clue gods-4-2990)",
+          "It is characterized by technology. (clue gods-5-6721)"
+        ]
+      }
+    ],
+    "festivals": [
+      {
+        "word": "diwali",
+        "hints": [
+          "It is characterized by navigation. (clue fest-1-3942)",
+          "It is characterized by transport. (clue fest-2-7738)",
+          "People often use it for technology. (clue fest-3-9819)",
+          "It is widely found in the Americas. (clue fest-4-2676)",
+          "It is widely found in urban areas. (clue fest-5-6377)"
+        ]
+      },
+      {
+        "word": "christmas",
+        "hints": [
+          "It is widely found in rural regions. (clue fest-1-1599)",
+          "It is commonly associated with entertainment. (clue fest-2-6531)",
+          "It is commonly associated with weather. (clue fest-3-7386)",
+          "It is known for being modern. (clue fest-4-2470)",
+          "It is commonly associated with health. (clue fest-5-3986)"
+        ]
+      },
+      {
+        "word": "eid",
+        "hints": [
+          "It is characterized by science. (clue fest-1-1700)",
+          "It is commonly associated with nature. (clue fest-2-7590)",
+          "It is known for being modern. (clue fest-3-8424)",
+          "It is widely found in Oceans. (clue fest-4-2873)",
+          "People often use it for nature. (clue fest-5-1067)"
+        ]
+      },
+      {
+        "word": "hanukkah",
+        "hints": [
+          "People often use it for entertainment. (clue fest-1-7793)",
+          "It is characterized by food. (clue fest-2-4518)",
+          "It is known for being ancient. (clue fest-3-2882)",
+          "It is commonly associated with food. (clue fest-4-8278)",
+          "It is commonly associated with culture. (clue fest-5-8648)"
+        ]
+      },
+      {
+        "word": "halloween",
+        "hints": [
+          "People often use it for sports. (clue fest-1-9872)",
+          "It is characterized by navigation. (clue fest-2-5299)",
+          "It is commonly associated with navigation. (clue fest-3-1202)",
+          "People often use it for weather. (clue fest-4-4985)",
+          "It is commonly associated with science. (clue fest-5-2449)"
+        ]
+      }
+    ],
+    "food_dishes": [
+      {
+        "word": "biryani",
+        "hints": [
+          "It is commonly eaten as food (clue food-1-1516)",
+          "It is often available in markets or farms (clue food-2-8259)",
+          "It is associated with particular flavors or spices (clue food-3-6865)",
+          "It is seasonal in many regions (clue food-4-6831)",
+          "It is used in many traditional recipes (clue food-5-8184)"
+        ]
+      },
+      {
+        "word": "pizza",
+        "hints": [
+          "It is commonly eaten as food (clue food-1-4911)",
+          "It is often available in markets or farms (clue food-2-8557)",
+          "It is associated with particular flavors or spices (clue food-3-1391)",
+          "It is seasonal in many regions (clue food-4-5232)",
+          "It is used in many traditional recipes (clue food-5-2502)"
+        ]
+      },
+      {
+        "word": "sushi",
+        "hints": [
+          "It is commonly eaten as food (clue food-1-6129)",
+          "It is often available in markets or farms (clue food-2-5683)",
+          "It is associated with particular flavors or spices (clue food-3-7466)",
+          "It is seasonal in many regions (clue food-4-4541)",
+          "It is used in many traditional recipes (clue food-5-9651)"
+        ]
+      },
+      {
+        "word": "tacos",
+        "hints": [
+          "It is commonly eaten as food (clue food-1-8262)",
+          "It is often available in markets or farms (clue food-2-4021)",
+          "It is associated with particular flavors or spices (clue food-3-7954)",
+          "It is seasonal in many regions (clue food-4-5399)",
+          "It is used in many traditional recipes (clue food-5-420)"
+        ]
+      },
+      {
+        "word": "pasta",
+        "hints": [
+          "It is commonly eaten as food (clue food-1-1028)",
+          "It is often available in markets or farms (clue food-2-8762)",
+          "It is associated with particular flavors or spices (clue food-3-2994)",
+          "It is seasonal in many regions (clue food-4-5177)",
+          "It is used in many traditional recipes (clue food-5-861)"
+        ]
+      }
+    ],
+    "technology_terms": [
+      {
+        "word": "internet",
+        "hints": [
+          "It is a fundamental concept in its field (clue tech-1-2780)",
+          "It is commonly measured or observed (clue tech-2-6263)",
+          "It helps explain natural phenomena (clue tech-3-9861)",
+          "It is taught at various education levels (clue tech-4-2782)",
+          "It appears in textbooks and courses (clue tech-5-8655)"
+        ]
+      },
+      {
+        "word": "blockchain",
+        "hints": [
+          "It is a fundamental concept in its field (clue tech-1-2778)",
+          "It is commonly measured or observed (clue tech-2-2518)",
+          "It helps explain natural phenomena (clue tech-3-3737)",
+          "It is taught at various education levels (clue tech-4-9304)",
+          "It appears in textbooks and courses (clue tech-5-6502)"
+        ]
+      },
+      {
+        "word": "cloud computing",
+        "hints": [
+          "It is a fundamental concept in its field (clue tech-1-2669)",
+          "It is commonly measured or observed (clue tech-2-6888)",
+          "It helps explain natural phenomena (clue tech-3-5477)",
+          "It is taught at various education levels (clue tech-4-4707)",
+          "It appears in textbooks and courses (clue tech-5-6546)"
+        ]
+      },
+      {
+        "word": "iot",
+        "hints": [
+          "It is a fundamental concept in its field (clue tech-1-4142)",
+          "It is commonly measured or observed (clue tech-2-231)",
+          "It helps explain natural phenomena (clue tech-3-3175)",
+          "It is taught at various education levels (clue tech-4-9161)",
+          "It appears in textbooks and courses (clue tech-5-335)"
+        ]
+      },
+      {
+        "word": "machine learning",
+        "hints": [
+          "It is a fundamental concept in its field (clue tech-1-7243)",
+          "It is commonly measured or observed (clue tech-2-7190)",
+          "It helps explain natural phenomena (clue tech-3-928)",
+          "It is taught at various education levels (clue tech-4-7792)",
+          "It appears in textbooks and courses (clue tech-5-4702)"
+        ]
+      }
+    ],
+    "apps_websites": [
+      {
+        "word": "youtube",
+        "hints": [
+          "It is characterized by communication. (clue apps-1-8196)",
+          "It is commonly associated with entertainment. (clue apps-2-1853)",
+          "It is known for being rare. (clue apps-3-234)",
+          "People often use it for food. (clue apps-4-6619)",
+          "People often use it for nature. (clue apps-5-8097)"
+        ]
+      },
+      {
+        "word": "facebook",
+        "hints": [
+          "It is commonly associated with food. (clue apps-1-7078)",
+          "It is characterized by navigation. (clue apps-2-9322)",
+          "It is characterized by transport. (clue apps-3-6147)",
+          "People often use it for entertainment. (clue apps-4-7190)",
+          "It is widely found in forests. (clue apps-5-6655)"
+        ]
+      },
+      {
+        "word": "twitter",
+        "hints": [
+          "It is characterized by construction. (clue apps-1-3242)",
+          "It is widely found in forests. (clue apps-2-1214)",
+          "It is widely found in temperate zones. (clue apps-3-9522)",
+          "It is commonly associated with health. (clue apps-4-109)",
+          "It is widely found in Asia. (clue apps-5-573)"
+        ]
+      },
+      {
+        "word": "instagram",
+        "hints": [
+          "It is known for being dangerous. (clue apps-1-1317)",
+          "It is commonly associated with technology. (clue apps-2-3562)",
+          "People often use it for weather. (clue apps-3-3246)",
+          "People often use it for health. (clue apps-4-6634)",
+          "It is commonly associated with food. (clue apps-5-3270)"
+        ]
+      },
+      {
+        "word": "wikipedia",
+        "hints": [
+          "It is widely found in Asia. (clue apps-1-3812)",
+          "People often use it for entertainment. (clue apps-2-7816)",
+          "It is widely found in globally. (clue apps-3-7640)",
+          "It is commonly associated with sports. (clue apps-4-2690)",
+          "It is widely found in coastal areas. (clue apps-5-5017)"
+        ]
+      }
+    ],
+    "programming_terms": [
+      {
+        "word": "variable",
+        "hints": [
+          "It is a fundamental concept in its field (clue prog-1-4839)",
+          "It is commonly measured or observed (clue prog-2-1325)",
+          "It helps explain natural phenomena (clue prog-3-8415)",
+          "It is taught at various education levels (clue prog-4-9023)",
+          "It appears in textbooks and courses (clue prog-5-5028)"
+        ]
+      },
+      {
+        "word": "function",
+        "hints": [
+          "It is a fundamental concept in its field (clue prog-1-586)",
+          "It is commonly measured or observed (clue prog-2-6996)",
+          "It helps explain natural phenomena (clue prog-3-5952)",
+          "It is taught at various education levels (clue prog-4-2976)",
+          "It appears in textbooks and courses (clue prog-5-1391)"
+        ]
+      },
+      {
+        "word": "loop",
+        "hints": [
+          "It is a fundamental concept in its field (clue prog-1-6581)",
+          "It is commonly measured or observed (clue prog-2-6223)",
+          "It helps explain natural phenomena (clue prog-3-6722)",
+          "It is taught at various education levels (clue prog-4-7811)",
+          "It appears in textbooks and courses (clue prog-5-7394)"
+        ]
+      },
+      {
+        "word": "array",
+        "hints": [
+          "It is a fundamental concept in its field (clue prog-1-958)",
+          "It is commonly measured or observed (clue prog-2-5255)",
+          "It helps explain natural phenomena (clue prog-3-9409)",
+          "It is taught at various education levels (clue prog-4-6447)",
+          "It appears in textbooks and courses (clue prog-5-5379)"
+        ]
+      },
+      {
+        "word": "object",
+        "hints": [
+          "It is a fundamental concept in its field (clue prog-1-4112)",
+          "It is commonly measured or observed (clue prog-2-6252)",
+          "It helps explain natural phenomena (clue prog-3-3612)",
+          "It is taught at various education levels (clue prog-4-431)",
+          "It appears in textbooks and courses (clue prog-5-590)"
+        ]
+      }
+    ],
+    "gadgets": [
+      {
+        "word": "smartphone",
+        "hints": [
+          "It is commonly used for daily tasks (clue gadg-1-7382)",
+          "It often requires maintenance or power (clue gadg-2-2476)",
+          "It comes in various sizes and models (clue gadg-3-5250)",
+          "It is usually found in homes or workplaces (clue gadg-4-4460)",
+          "It was developed through technological improvements (clue gadg-5-903)"
+        ]
+      },
+      {
+        "word": "tablet",
+        "hints": [
+          "It is commonly used for daily tasks (clue gadg-1-3861)",
+          "It often requires maintenance or power (clue gadg-2-9953)",
+          "It comes in various sizes and models (clue gadg-3-3548)",
+          "It is usually found in homes or workplaces (clue gadg-4-9048)",
+          "It was developed through technological improvements (clue gadg-5-9473)"
+        ]
+      },
+      {
+        "word": "smartwatch",
+        "hints": [
+          "It is commonly used for daily tasks (clue gadg-1-7291)",
+          "It often requires maintenance or power (clue gadg-2-6704)",
+          "It comes in various sizes and models (clue gadg-3-2637)",
+          "It is usually found in homes or workplaces (clue gadg-4-112)",
+          "It was developed through technological improvements (clue gadg-5-2934)"
+        ]
+      },
+      {
+        "word": "laptop",
+        "hints": [
+          "It is commonly used for daily tasks (clue gadg-1-5725)",
+          "It often requires maintenance or power (clue gadg-2-5954)",
+          "It comes in various sizes and models (clue gadg-3-2262)",
+          "It is usually found in homes or workplaces (clue gadg-4-691)",
+          "It was developed through technological improvements (clue gadg-5-3204)"
+        ]
+      },
+      {
+        "word": "camera",
+        "hints": [
+          "It is commonly used for daily tasks (clue gadg-1-7566)",
+          "It often requires maintenance or power (clue gadg-2-7370)",
+          "It comes in various sizes and models (clue gadg-3-9791)",
+          "It is usually found in homes or workplaces (clue gadg-4-6072)",
+          "It was developed through technological improvements (clue gadg-5-3194)"
+        ]
+      }
     ]
   }
-
-]
+}
